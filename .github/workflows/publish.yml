@@ -1,12 +1,12 @@
 
-name: deploy
+name: Build & publish image
 
 on:
   workflow_dispatch:
     inputs:
       # Dhis2 version to build
       version:
-        description: version of dhis2 to build
+        description: version of dhis2 to build (eg: 2.33.8), please verify before localy you don't need dhis.conf adaptations
         required: true
 
 jobs:
@@ -27,6 +27,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Install Dependencies
+      - name: Build & publish image
         run: ./script/release ${{github.event.inputs.version }}
 
