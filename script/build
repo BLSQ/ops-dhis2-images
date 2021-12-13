@@ -4,6 +4,6 @@ DHIS2_FULL_VERSION=$1
 DHIS2_VERSION=$(echo $DHIS2_FULL_VERSION | cut -d'.' -f 1,2)
 DHIS2_TAG=$(echo $DHIS2_FULL_VERSION | cut -d'-' -f 1  | cut -d'.' -f 1,2,3)
 echo downloading 
-./download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
+./script/download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
 echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION}
 docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION -t blsqtech/dhis2:$DHIS2_FULL_VERSION -t blsqtech/dhis2:$DHIS2_TAG .
