@@ -62,8 +62,8 @@ test that image in staging or test environment
 | DATABASE_PASSWORD     |                |                                  |
 | ENCRYPTION_PASSWORD   |                | |
 | FILESTORE_PROVIDER    | aws-s3         | other possible value `filesystem`  |
-| FILESTORE_BUCKET      |                | note that older version don't support eu-central-1 |
-| FILESTORE_LOCATION    |                |                                  |
+| FILESTORE_BUCKET      |                | set to files if not S3\n if s3 note that older version don't support eu-central-1 |
+| FILESTORE_LOCATION    |                | set to files if not S3                                 |
 | FILESTORE_IDENTITY    |                |                                  |
 | FILESTORE_SECRET      |                |                                  |
 | DHIS_AUDIT_LOGGER     |   on           |                                  |
@@ -76,6 +76,11 @@ test that image in staging or test environment
 | DHIS_LOG_LEVEL
 | SPRING_LOG_LEVEL
 | HAZELCAST_LOG_LEVEL
+
+
+# Volumes
+
+for local hosting : ./root/files
 
 # Implementation details
 
