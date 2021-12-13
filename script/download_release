@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DHIS2_CHANNEL=stable
+DHIS2_VERSION=$1
+DHIS2_FULL_VERSION=$2
+
+uri=https://releases.dhis2.org/$DHIS2_VERSION/dhis2-$DHIS2_CHANNEL-$DHIS2_FULL_VERSION.war
+file=./releases/dhis2-$DHIS2_CHANNEL-$DHIS2_FULL_VERSION.war 
+
+find ./releases -name "*.war" -type 'f' -size -200M -delete
+
+if test -e "$file"
+then zflag="-z $file"
+else zflag=
+fi
+
+curl -o "$file" $zflag "$uri"
+find ./releases -name "*.war" -type 'f' -size -200M -delete

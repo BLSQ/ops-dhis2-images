@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker push blsqtech/dhis2:$DOCKER_TAG

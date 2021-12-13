@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" immediateFlush="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="{{default .Env.DEFAULT_LOG_LEVEL "WARN"}}">
+            <AppenderRef ref="Console" />
+        </Root>
+        <Logger name="org.hisp.dhis" level="{{default .Env.DHIS_LOG_LEVEL "WARN"}}" additivity="true"/>
+        <Logger name="org.hisp.dhis.system.startup" level="info" additivity="true"/>        
+        <Logger name="com.hazelcast" level="{{default .Env.HAZELCAST_LOG_LEVEL "WARN"}}" additivity="true"/>
+        <Logger name="org.springframework.web" level="{{default .Env.SPRING_LOG_LEVEL "WARN"}}" additivity="true"/>
+    </Loggers>
+</Configuration>
