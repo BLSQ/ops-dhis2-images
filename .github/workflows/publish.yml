@@ -8,10 +8,6 @@ on:
       version:
         description: version of dhis2 to build
         required: true
-  push:
-    # On push to main deploy to staging
-    branches:
-      - main
 
 jobs:
   build:
