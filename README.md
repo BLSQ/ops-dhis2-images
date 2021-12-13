@@ -1,6 +1,6 @@
 
 
-# Testing localy
+# Testing locally
 
 If it's a new major version check the documentation for the changes in `dhis.conf`
 then test locally
@@ -29,9 +29,11 @@ note for testing "FILESTORE_PROVIDER" related properties you can just install ta
 
 # Releasing an image via github workflow
 
+Preferred method (better network connectivity compared to your home network)
+
 https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
 
-# Releasing an image localy
+# Releasing an image locally
 
 Let's say we want to release a 2.33.8 version
 ```
