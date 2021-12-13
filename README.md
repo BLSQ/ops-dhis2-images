@@ -2,6 +2,8 @@
 
 # Testing localy
 
+If it's a new major version check the documentation for the changes in `dhis.conf`
+then test locally
 
 Let's say we want to release a 2.33.8 version
 ```
@@ -23,6 +25,8 @@ http://localhost:8080/
 
 login with `admin` `district`
 
+note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
+
 
 # Releasing an image
 
@@ -30,14 +34,10 @@ Let's say we want to release a 2.33.8 version
 ```
 ./script/build 2.33.8
 ```
-If it's a new major version check the documentation for the changes in `dhis.conf`
-then test locally
+
+if not done yet, you need to login 
 ```
-docker run -it blsqtech/dhis2:2.33.8
-```
-should start then fails looking for the db
-```
- Caused by: java.net.UnknownHostException: 
+docker login
 ```
 
 then publish on dockerhub
@@ -60,6 +60,7 @@ test that image in staging or test environment
 | DATABASE_NAME         |                |                                  |
 | DATABASE_USER         |                |                                  |  
 | DATABASE_PASSWORD     |                |                                  |
+| DATABASE_OPTIONS      | sslmode=require | depending on how is pg configure you might want to override that (eg localhosting) |
 | ENCRYPTION_PASSWORD   |                | |
 | FILESTORE_PROVIDER    | aws-s3         | other possible value `filesystem`  |
 | FILESTORE_BUCKET      |                | set to files if not S3\n if s3 note that older version don't support eu-central-1 |
@@ -80,7 +81,7 @@ test that image in staging or test environment
 
 # Volumes
 
-for local hosting : ./root/files
+for local hosting you can override ./root/files
 
 # Implementation details
 
