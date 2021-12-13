@@ -15,14 +15,13 @@ RUN wget https://github.com/ajermakovics/jvm-mon/releases/download/$JVM_MON_VERS
 # install webapp runner
 ENV WEBAPP_RUNNER_VERSION 8.5.51.0
 RUN wget https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O webapp-runner.jar
-# install dhis2 version
-ARG DHIS2_VERSION=2.34
-# to trigger a rebuild
-ARG DHIS2_FULL_VERSION=2.34.7-EMBARGOED
+# install dhis2 version 2.34
+ARG DHIS2_VERSION
+# to trigger a rebuild eg 2.34.7-EMBARGOED
+ARG DHIS2_FULL_VERSION
 RUN echo ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
 ADD ./releases/dhis2-stable-$DHIS2_FULL_VERSION.war dhis.war
-RUN ls -als
 # start process
 EXPOSE 8080
 COPY ./templates .
-CMD export DHIS2_HOME=. && dockerize -template ./log4j.tmpl:./log4j2.xml -template ./dhis.conf.tmpl:./dhis.conf java $JAVA_OPTS -Dlog4j.configuration=file:/root/log4j2.xml -Dlog4j.configurationFile=file:/root/log4j2.xml -Djava.awt.headless=true -Dlog4j2.formatMsgNoLookups=true -jar webapp-runner.jar --expand-war-file true --port 8080 dhis.war -ArelaxedQueryChars='\ { } | [ ]'
+CMD export DHIS2_HOME=. && dockerize -template ./log4j.properties.tmpl:./log4j.properties -template ./dhis.conf.tmpl:./dhis.conf java $JAVA_OPTS -Dlog4j.configuration=file:/root/log4j.properties -Dlog4j.configurationFile=file:/root/log4j.properties -Djava.awt.headless=true -Dlog4j2.formatMsgNoLookups=true -cp ./:./webapp-runner.jar webapp.runner.launch.Main --expand-war-file true --port 8080 dhis.war -ArelaxedQueryChars='\ { } | [ ]'

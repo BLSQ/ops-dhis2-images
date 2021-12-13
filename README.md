@@ -1,5 +1,28 @@
 
 
+# Testing localy
+
+
+Let's say we want to release a 2.33.8 version
+```
+./script/build 2.33.8
+```
+launch the docker compose
+
+```
+cd test
+DHIS2_FULL_VERSION=2.33.8 docker-compose up
+```
+(note data isn't persisted on purpose)
+
+then check
+
+```
+http://localhost:8080/
+```
+
+login with `admin` `district`
+
 
 # Releasing an image
 
@@ -32,6 +55,7 @@ test that image in staging or test environment
 |-----------------------|----------------|----------------------------------|
 | DHIS_BASE_URL         |                |                                  |
 | DATABASE_HOST         |                |                                  |
+| DATABASE_NAME         |     | |
 | DATABASE_PORT         |   5432         |                                  |
 | DATABASE_NAME         |                |                                  |
 | DATABASE_USER         |                |                                  |  
