@@ -62,7 +62,6 @@ test that image in staging or test environment
 | DATABASE_HOST         |                |                                  |
 | DATABASE_NAME         |     | |
 | DATABASE_PORT         |   5432         |                                  |
-| DATABASE_NAME         |                |                                  |
 | DATABASE_USER         |                |                                  |  
 | DATABASE_PASSWORD     |                |                                  |
 | DATABASE_OPTIONS      | sslmode=require | depending on how is pg configure you might want to override that (eg localhosting) |
