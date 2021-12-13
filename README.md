@@ -27,8 +27,11 @@ login with `admin` `district`
 
 note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
 
+# Releasing an image via github workflow
 
-# Releasing an image
+https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
+
+# Releasing an image localy
 
 Let's say we want to release a 2.33.8 version
 ```
