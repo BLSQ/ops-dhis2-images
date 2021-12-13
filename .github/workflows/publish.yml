@@ -1,5 +1,5 @@
 
-name: "Build & publish image"
+name: "Build and publish image"
 
 on:
   workflow_dispatch:
@@ -27,6 +27,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: "Build & publish image"
+      - name: "Build and publish image"
         run: ./script/release ${{github.event.inputs.version }}
 
