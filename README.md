@@ -2,59 +2,7 @@
 
 dhis2 images : https://hub.docker.com/r/blsq/dhis2/tags
 
-# Testing locally
-
-If it's a new major version check the documentation for the changes in `dhis.conf`
-then test locally
-
-Let's say we want to release a 2.33.8 version
-```
-./script/build 2.33.8
-```
-launch the docker compose
-
-```
-cd test
-DHIS2_FULL_VERSION=2.33.8 docker-compose up
-```
-(note data isn't persisted on purpose)
-
-then check
-
-```
-http://localhost:8080/
-```
-
-login with `admin` `district`
-
-note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
-
-# Releasing an image via github workflow
-
-Preferred method (better network connectivity compared to your home network)
-
-https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
-
-# Releasing an image locally
-
-Let's say we want to release a 2.33.8 version
-```
-./script/build 2.33.8
-```
-
-if not done yet, you need to login 
-```
-docker login
-```
-
-then publish on dockerhub
-```
-./script/publish 2.33.8
-```
-
-test that image in staging or test environment
-
-
+## Using
 
 # ENV variables
 
@@ -89,7 +37,62 @@ test that image in staging or test environment
 
 for local hosting you can override ./root/files
 
-# Implementation details
+
+# Development 
+## Testing locally
+
+If it's a new major version check the documentation for the changes in `dhis.conf`
+then test locally
+
+Let's say we want to release a 2.33.8 version
+```
+./script/build 2.33.8
+```
+launch the docker compose
+
+```
+cd test
+DHIS2_FULL_VERSION=2.33.8 docker-compose up
+```
+(note data isn't persisted on purpose)
+
+then check
+
+```
+http://localhost:8080/
+```
+
+login with `admin` `district`
+
+note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
+
+## Releasing an image via github workflow
+
+Preferred method (better network connectivity compared to your home network)
+
+https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
+
+## Releasing an image locally
+
+Let's say we want to release a 2.33.8 version
+```
+./script/build 2.33.8
+```
+
+if not done yet, you need to login 
+```
+docker login
+```
+
+then publish on dockerhub
+```
+./script/publish 2.33.8
+```
+
+test that image in staging or test environment
+
+
+## Implementation details
 
 * Different approach compared to the official images
   - don't rebuild the war files but use the official released war
