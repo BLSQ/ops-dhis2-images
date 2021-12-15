@@ -1,7 +1,7 @@
 version: '3'
 services:
   core:
-    image: "blsqtech/dhis2:${DHIS2_FULL_VERSION}"
+    image: "blsq/dhis2:${DHIS2_FULL_VERSION}"
     restart: always
     env_file: .env
     ports:
