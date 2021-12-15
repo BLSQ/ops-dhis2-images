@@ -1,3 +1,4 @@
 #!/bin/bash
 DOCKER_TAG=$1
-docker push -a blsq/dhis2
+
+docker push blsq/dhis2 --all-tags
