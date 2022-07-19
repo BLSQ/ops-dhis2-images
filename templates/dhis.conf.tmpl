@@ -22,6 +22,7 @@ connection.schema = update
 # encryption.password = {{.Env.ENCRYPTION_PASSWORD}}
 
 # Number of maximum connection allowed on db
+connection.pool.max_size = {{default .Env.DB_POOL_SIZE "78"}}
 c3p0.max_size = {{default .Env.DB_POOL_SIZE "78"}}
 hibernate.c3p0.max_size= {{default .Env.DB_POOL_SIZE "78"}}
 
@@ -71,3 +72,11 @@ audit.database  = {{default .Env.DHIS_AUDIT_DB "on"}}
 
 # Base URL
 server.base.url = {{default .Env.DHIS_BASE_URL ""}}
+
+# Enable monitoring
+monitoring.api.enabled= {{default .Env.DHIS_MONITORING_API "true"}}
+monitoring.jvm.enabled= {{default .Env.DHIS_MONITORING_JVM "on"}}
+monitoring.dbpool.enabled= {{default .Env.DHIS_MONITORING_DBPOOL "on"}}
+monitoring.hibernate.enabled= {{default .Env.DHIS_MONITORING_HIBERNATE "off"}}
+monitoring.uptime.enabled= {{default .Env.DHIS_MONITORING_UPTIME "on"}}
+monitoring.cpu.enabled= {{default .Env.DHIS_MONITORING_CPU "on"}}
