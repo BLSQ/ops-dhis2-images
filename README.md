@@ -26,7 +26,7 @@ dhis2 images : https://hub.docker.com/r/blsq/dhis2/tags
 | DHIS_AUDIT_MATRIX_METADATA | CREATE;UPDATE;DELETE;READ | |
 | DHIS_AUDIT_MATRIX_TRACKER | CREATE;UPDATE;DELETE;READ | |
 | DHIS_AUDIT_MATRIX_AGGREGATE | CREATE;UPDATE;DELETE;READ | |
-| DHIS2_GOOGLE_AUTH     |                |                                  |
+| DHIS_GOOGLE_AUTH      |                | cat dhis-google-auth.json \| base64 -w 0 |
 | DHIS_MONITORING_API | true | |
 | DHIS_MONITORING_JVM | on | |
 | DHIS_MONITORING_DBPOOL | on | |
