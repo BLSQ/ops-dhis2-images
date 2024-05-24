@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM openjdk:11-jdk
 WORKDIR /root/
 
 RUN  apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
@@ -24,4 +24,5 @@ ADD ./releases/dhis2-stable-$DHIS2_FULL_VERSION.war dhis.war
 # start process
 EXPOSE 8080
 COPY ./templates .
-CMD export DHIS2_HOME=. && dockerize -template ./log4j.properties.tmpl:./log4j.properties -template ./dhis.conf.tmpl:./dhis.conf java $JAVA_OPTS -Dfile.encoding=UTF-8 -Dlog4j.configuration=file:/root/log4j.properties -Dlog4j.configurationFile=file:/root/log4j.properties -Djava.awt.headless=true -Dlog4j2.formatMsgNoLookups=true -cp ./:./webapp-runner.jar webapp.runner.launch.Main --expand-war-file true --port 8080 dhis.war -ArelaxedQueryChars='\ { } | [ ]'
+COPY ./entry_point.sh ./entry_point.sh
+CMD ./entry_point.sh
