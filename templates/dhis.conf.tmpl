@@ -48,6 +48,9 @@ metadata.audit.persist = {{default .Env.DHIS_AUDIT_DB "on"}}
 #
 analytics.cache.expiration = {{default .Env.CACHE_EXPIRATION "3600"}}
 
+# Unlogged tables
+analytics.table.unlogged = {{default .Env.TABLE_UNLOGGED "off"}}
+
 # If DHIS >= 2.34
 # This handles the artemis async logging system.
 #
