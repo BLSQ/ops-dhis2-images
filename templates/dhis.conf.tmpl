@@ -90,7 +90,7 @@ oidc.oauth2.login.enabled = {{default .Env.DHIS_OIDC_OAUTH2_LOGIN "on"}}
 # First provider (azure.0):
 
 # Alias, or name that will show on the login button in the DHIS2 login screen.
-oidc.provider.azure.0.tenant = {{.Env.DHIS_AZURE_0_TENANT}}
+oidc.provider.azure.0.tenant = {{.Env.DHIS_OIDC_AZURE_0_TENANT}}
 
 # Client id, given to you in the Azure portal
 oidc.provider.azure.0.client_id = {{.Env.DHIS_OIDC_AZURE_0_CLIENT_ID}}
