@@ -86,7 +86,7 @@ monitoring.cpu.enabled= {{default .Env.DHIS_MONITORING_CPU "on"}}
 
 
 # Enables OIDC login
-oidc.oauth2.login.enabled = {{default .Env.DHIS_OIDC_OAUTH2_LOGIN "off"}}
+{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.oauth2.login.enabled = {{default .Env.DHIS_OIDC_OAUTH2_LOGIN "off"}}
 # First provider (azure.0):
 # Alias, or name that will show on the login button in the DHIS2 login screen.
 {{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.tenant = {{.Env.DHIS_OIDC_AZURE_0_TENANT}}
