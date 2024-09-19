@@ -85,25 +85,3 @@ monitoring.uptime.enabled= {{default .Env.DHIS_MONITORING_UPTIME "on"}}
 monitoring.cpu.enabled= {{default .Env.DHIS_MONITORING_CPU "on"}}
 
 
-# Enables OIDC login
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.oauth2.login.enabled = {{default .Env.DHIS_OIDC_OAUTH2_LOGIN "off"}}
-# First provider (azure.0):
-# Alias, or name that will show on the login button in the DHIS2 login screen.
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.tenant = {{.Env.DHIS_OIDC_AZURE_0_TENANT}}
-# Client id, given to you in the Azure portal
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.client_id = {{.Env.DHIS_OIDC_AZURE_0_CLIENT_ID}}
-# Client secret, given to you in the Azure portal
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.client_secret = {{.Env.DHIS_OIDC_AZURE_0_CLIENT_SECRET}}
-# [Optional] Authorized redirect URI, the as set in Azure portal 
-# If your public hostname is different from what the server sees internally, 
-# you need to provide your full public url, like the example below.
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.redirect_url = {{.Env.DHIS_OIDC_AZURE_0_REDIRECT_URL}}
-# [Optional] Where to redirect after logging out.
-# If your public hostname is different from what the server sees internally, 
-# you need to provide your full public URL, like the example below.
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.logout.redirect_url = {{.Env.DHIS_OIDC_LOGOUT_REDIRECT_URL}}
-# [Optional], defaults to 'email'
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.mapping_claim = {{default .Env.DHIS_OIDC_AZURE_0_MAPPING_CLAIM "email"}} 
-# [Optional], defaults to 'on'
-{{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.support_logout = {{default .Env.DHIS_OIDC_AZURE_0_SUPPORT_LOGOUT "on"}}  
-
