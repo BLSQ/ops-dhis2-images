@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17 
 WORKDIR /root/
 
-RUN  apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+RUN  apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
 # install dockerize
 ENV DOCKERIZE_VERSION v0.5.0
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
