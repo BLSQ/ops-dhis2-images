@@ -79,6 +79,18 @@ Preferred method (better network connectivity compared to your home network)
 
 https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
 
+Make sure you are on the correct branch for the version you want to release:
+
+| Branch             | DHIS2 Versions          |
+|--------------------|-------------------------|
+| `237-and-before`   | 2.37 and below          |
+| `main`             | 2.38 → 2.40             |
+| `241`              | 2.41                    |
+
+Example: 
+- if you need to release **DHIS2 2.39** version, switch to the `main` branch before triggering the workflow.
+- if you need to release **DHIS2 2.36** version, switch to the `237-and-before` branch before triggering the workflow.
+
 ## Releasing an image locally
 
 Let's say we want to release a 2.33.8 version
