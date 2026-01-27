@@ -59,7 +59,7 @@ launch the docker compose
 
 ```
 cd test
-DHIS2_FULL_VERSION=2.33.8 docker-compose up
+DHIS2_FULL_VERSION=2.33.8 docker compose up
 ```
 (note data isn't persisted on purpose)
 
