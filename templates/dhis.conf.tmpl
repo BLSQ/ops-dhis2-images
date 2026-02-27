@@ -107,3 +107,15 @@ monitoring.cpu.enabled= {{default .Env.DHIS_MONITORING_CPU "on"}}
 # [Optional], defaults to 'on'
 {{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.support_logout = {{default .Env.DHIS_OIDC_AZURE_0_SUPPORT_LOGOUT "on"}}  
 
+
+# Analytics database management system
+{{if .Env.DHIS_ANALYTICS_DATABASE}}analytics.database = {{.Env.DHIS_ANALYTICS_DATABASE}}{{end}}
+
+# Analytics database connection URL
+{{if .Env.DHIS_ANALYTICS_CONNECTION_URL}}analytics.connection.url = {{.Env.DHIS_ANALYTICS_CONNECTION_URL}}{{end}}
+
+# Analytics database username
+{{if .Env.DHIS_ANALYTICS_CONNECTION_USERNAME}}analytics.connection.username = {{.Env.DHIS_ANALYTICS_CONNECTION_USERNAME}}{{end}}
+
+# Analytics database password
+{{if .Env.DHIS_ANALYTICS_CONNECTION_PASSWORD}}analytics.connection.password = {{.Env.DHIS_ANALYTICS_CONNECTION_PASSWORD}}{{end}}
