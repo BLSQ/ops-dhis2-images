@@ -107,3 +107,6 @@ monitoring.cpu.enabled= {{default .Env.DHIS_MONITORING_CPU "on"}}
 # [Optional], defaults to 'on'
 {{if eq (default .Env.DHIS_OIDC_OAUTH2_LOGIN "off") "off"}}disabled.{{end}}oidc.provider.azure.0.support_logout = {{default .Env.DHIS_OIDC_AZURE_0_SUPPORT_LOGOUT "on"}}  
 
+# Enable User Impersonation Feature
+{{if eq (default .Env.DHIS_SWITCH_USER_FEATURE "disabled") "disabled"}}disabled.{{end}}switch_user_feature.enabled = {{default .Env.DHIS_SWITCH_USER_FEATURE "disabled"}}
+{{if eq (default .Env.DHIS_SWITCH_USER_FEATURE "disabled") "disabled"}}disabled.{{end}}switch_user_allow_listed_ips = {{default .Env.DHIS_SWITCH_USER_ALLOW_LISTED_IPS "localhost,127.0.0.1,[0:0:0:0:0:0:0:1]"}}
