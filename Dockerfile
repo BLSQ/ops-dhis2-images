@@ -16,8 +16,8 @@ ENV WEBAPP_RUNNER_VERSION=10.1.46.0
 RUN wget -q https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O /tmp/webapp-runner.jar
 
 
-# --- final stage: slim JRE runtime --------------------------------------------
-FROM eclipse-temurin:17-jre
+# --- Final stage: JDK runtime (jdk has extra tools like jstack and jps) --------------------------------------------
+FROM eclipse-temurin:17-jdk
 
 # create non-root user, target dirs, and set ownership in a single layer
 RUN groupadd --gid 1001 appuser \

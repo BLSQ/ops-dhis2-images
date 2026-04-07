@@ -110,6 +110,39 @@ then publish on dockerhub
 
 test that image in staging or test environment
 
+# Kubernetes
+
+To test the image locally, use minikube
+
+```
+minikube start
+```
+
+[optional] before building the image, activate minikube's docker env so you don't need to pull the image
+```
+eval $(minikube docker-env)
+```
+
+build the image
+
+```
+./script/build 2.42.1
+```
+
+then if minikube is up, apply the example
+
+```
+DHIS2_FULL_VERSION=2.42.1 envsubst < test/kubernetes.yaml | kubectl apply -f -                                             
+```
+
+Make sure dhis2 and postgis are up
+
+```
+kubectl get pods -n dhis-test
+```
+
+Open the local dhis2 at http://localhost:8080/
+
 
 ## Implementation details
 
