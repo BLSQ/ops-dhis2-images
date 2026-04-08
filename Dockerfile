@@ -63,4 +63,4 @@ COPY --chown=appuser:appuser --chmod=755 ./entry_point.sh ./entry_point.sh
 USER appuser
 
 EXPOSE 8080
-ENTRYPOINT ["./entry_point.sh", "$DHIS2_VERSION"]
+ENTRYPOINT ["./entry_point.sh"]

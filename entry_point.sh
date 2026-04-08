@@ -12,7 +12,6 @@ EOF
 
 echo "Bluesquare DHIS2 Container"
 
-DHIS2_VERSION=${1:-}
 if [ -z "$DHIS2_VERSION" ]; then
     echo "DHIS2_VERSION is not set"
 else
