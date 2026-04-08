@@ -144,6 +144,40 @@ kubectl get pods -n dhis-test
 Open the local dhis2 at http://localhost:8080/
 
 
+## Profiling with Async-Profile
+
+Get the pod name 
+
+```
+POD_NAME="..."
+```
+
+Start profiling
+
+```
+kubectl exec -it $POD_NAME -n dhis2 -- /bin/bash -c "/async-profiler/bin/asprof start -e wall jps && /async-profiler/bin/asprof status jps"
+```
+
+Do some requests / workload
+
+Stop profiling
+
+```
+kubectl exec -it $POD_NAME -n dhis2 -- /bin/bash -c "/async-profiler/bin/asprof stop -f /profile-%t.html jps"
+```
+
+Copy profile to local
+
+```
+kubectl cp $POD_NAME:/profile-*.html .
+```
+
+Ppen profile in browser
+
+```
+open profile-*.html
+```
+
 ## Implementation details
 
 * Different approach compared to the official images
