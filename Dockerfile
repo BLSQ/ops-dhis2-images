@@ -51,8 +51,6 @@ ARG DHIS2_VERSION
 ARG DHIS2_FULL_VERSION
 RUN echo ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
 
-
-
 # add dhis2 war file
 ADD --chown=appuser:appuser ./releases/dhis2-stable-$DHIS2_FULL_VERSION.war dhis.war
 
