@@ -1,13 +1,30 @@
 #!/bin/bash
 
-echo "
---------------------------------
 
+
+cat << "EOF"
+ ____  _       _____  ____             _____  _    _ _____  _____ ___  
+|  _ \| |     / ____|/ __ \           |  __ \| |  | |_   _|/ ____|__ \ 
+| |_) | |    | (___ | |  | |  ______  | |  | | |__| | | | | (___    ) |
+|  _ <| |     \___ \| |  | | |______| | |  | |  __  | | |  \___ \  / / 
+| |_) | |____ ____) | |__| |          | |__| | |  | |_| |_ ____) |/ /_ 
+|____/|______|_____/ \___\_\          |_____/|_|  |_|_____|_____/|____|
+
+EOF
+
+DHIS2_VERSION=${1:-}
+if [ -z "$DHIS2_VERSION" ]; then
+    echo "DHIS2_VERSION is not set"
+    exit 1
+fi
+
+echo "                               
 Bluesquare DHIS2 Container
-Running as: $(whoami)
-Date: $(date)
-
---------------------------------\n 
+DHIS2 Version: ${DHIS2_VERSION}
+Build Date: $(cat /build_date.txt)
+bluesquare.org
+$(whoami) @ $(date)
+---------------------------------
 "
 
 if [ -z "$DHIS_GOOGLE_AUTH" ]; then 
