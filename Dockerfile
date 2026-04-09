@@ -1,5 +1,6 @@
 # --- Builder stage: download dockerize and webapp-runner ---------------------
-FROM eclipse-temurin:17-jre AS builder
+ARG JDK_VERSION=17
+FROM eclipse-temurin:${JDK_VERSION}-jre AS builder
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget ca-certificates \
@@ -23,12 +24,13 @@ RUN wget https://github.com/async-profiler/async-profiler/releases/download/v${A
 
 # webapp runner (tomcat runner for dhis2)
 # https://github.com/heroku/webapp-runner
-ENV WEBAPP_RUNNER_VERSION=10.1.46.0
+ARG WEBAPP_RUNNER_VERSION=10.1.46.0
 RUN wget -q https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O /tmp/webapp-runner.jar
 
 
 # --- Final stage: JDK runtime (jdk has extra tools like jstack and jps) --------------------------------------------
-FROM eclipse-temurin:17-jdk
+ARG JDK_VERSION=17
+FROM eclipse-temurin:${JDK_VERSION}-jdk
 
 # Persist build date
 RUN date +%Y-%m-%d@%H:%M:%S > /build_date.txt
