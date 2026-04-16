@@ -59,9 +59,11 @@ launch the docker compose
 
 ```
 cd test
-DHIS2_FULL_VERSION=2.33.8 docker-compose up
+DHIS2_FULL_VERSION=2.33.8 docker compose up
 ```
 (note data isn't persisted on purpose)
+
+psql postgres://dhis:dhispwd@localhost:5432/dhis2
 
 then check
 
@@ -72,6 +74,21 @@ http://localhost:8080/
 login with `admin` `district`
 
 note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
+
+testing with non empty db
+
+```
+
+psql postgres://dhis:dhispwd@localhost:5432/postgres -c "CREATE DATABASE dhis2_new;"
+
+curl -L https://databases.dhis2.org/sierra-leone/2.40.11/dhis2-db-sierra-leone.sql.gz | gunzip -c | psql postgres://dhis:dhispwd@localhost:5432/dhis2_new
+
+
+psql postgres://dhis:dhispwd@localhost:5432/postgres
+SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'dhis2';
+ALTER DATABASE dhis2 RENAME TO dhis2_old;
+ALTER DATABASE dhis2_new RENAME TO dhis2;
+```
 
 ## Releasing an image via github workflow
 
