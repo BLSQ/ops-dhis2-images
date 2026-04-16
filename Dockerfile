@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17 
+FROM eclipse-temurin:17-jdk 
 WORKDIR /root/
 
 RUN  apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
@@ -13,7 +13,7 @@ RUN wget https://github.com/ajermakovics/jvm-mon/releases/download/$JVM_MON_VERS
     && tar -C / -xzvf jvm-mon-$JVM_MON_VERSION.tar.gz \
     && rm jvm-mon-$JVM_MON_VERSION.tar.gz
 # install webapp runner
-ENV WEBAPP_RUNNER_VERSION=8.5.51.0
+ENV WEBAPP_RUNNER_VERSION=10.1.46.0
 RUN wget https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O webapp-runner.jar
 # install dhis2 version 2.34
 ARG DHIS2_VERSION

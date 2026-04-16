@@ -73,6 +73,46 @@ login with `admin` `district`
 
 note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
 
+## Testing locally with clickhouse
+
+42.4.0
+
+check the .env have the variables, build the immage
+
+restoring a dump
+
+psql postgres://dhis:dhispwd@localhost:5432/postgres -c "CREATE DATABASE dhis2_new;"
+
+curl -L https://databases.dhis2.org/sierra-leone/2.42.4/dhis2-db-sierra-leone.sql.gz | gunzip -c | psql postgres://dhis:dhispwd@localhost:5432/dhis2_new
+
+psql postgres://dhis:dhispwd@localhost:5432/postgres
+SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'dhis2';
+ALTER DATABASE dhis2 RENAME TO dhis2_old;
+ALTER DATABASE dhis2_new RENAME TO dhis2;
+
+debugging
+connecting to clickhouse : 
+```
+docker compose exec clickhouse clickhouse-client   --user dhis   --password admin
+```
+then query as you want
+```
+-- Switch to the analytics database
+USE analytics;
+
+-- List all tables
+SHOW TABLES;
+
+-- Or see tables with more detail
+SELECT name, engine, total_rows, formatReadableSize(total_bytes) as size
+FROM system.tables
+WHERE database = 'analytics';
+
+-- Check all databases available
+SHOW DATABASES;
+
+```
+
 ## Releasing an image via github workflow
 
 Preferred method (better network connectivity compared to your home network)
