@@ -22,11 +22,14 @@ JDK_VERSION=${2:-17}
 DHIS2_VERSION=$(echo $DHIS2_FULL_VERSION | cut -d'.' -f 1,2)
 DHIS2_TAG=$(echo $DHIS2_FULL_VERSION | cut -d'-' -f 1  | cut -d'.' -f 1,2,3)
 
-if [ "$JDK_VERSION" = "8" ]; then
-    WEBAPP_RUNNER_VERSION=8.5.51.0
-else
-    WEBAPP_RUNNER_VERSION=10.1.46.0
-fi
+
+# ## Webapp runner = Tomcat runner for DHIS2
+# Available webapp-runner versions:
+# - 8.5.51.0
+# - 9.0.91.0
+# - 10.1.46.0
+WEBAPP_RUNNER_VERSION=9.0.91.0
+
 
 # echo downloading
 # ./script/download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
@@ -36,7 +39,7 @@ if [ "$KUBERNETES_BUILD" = true ]; then
     
     TAG_SUFFIX="std"
     
-    docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION --build-arg JDK_VERSION=$JDK_VERSION --build-arg WEBAPP_RUNNER_VERSION=$WEBAPP_RUNNER_VERSION -t blsq/dhis2:$DHIS2_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_FULL_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_TAG-$TAG_SUFFIX .
+    docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION --build-arg JDK_VERSION=$JDK_VERSION --build-arg WEBAPP_RUNNER_VERSION=$WEBAPP_RUNNER_VERSION -t blsq/dhis2:$DHIS2_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_FULL_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_TAG-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_TAG-$TAG_SUFFIX-alt .
 else
     echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION} meant for local deployment "(JDK ${JDK_VERSION}, webapp-runner ${WEBAPP_RUNNER_VERSION})"
     
