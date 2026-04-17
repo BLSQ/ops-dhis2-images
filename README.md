@@ -110,6 +110,96 @@ then publish on dockerhub
 
 test that image in staging or test environment
 
+## Releasing all images
+
+Get all versions from DHIS2
+
+This will create all versions and their supported JDK version
+
+```
+python script/versions.py > versions.json
+```
+
+Iterate over versions to build all
+```
+jq -c '.[]' versions.json | while read i; do
+  name=$(echo $i | jq -r '.name')
+  jdk=$(echo $i | jq -r '.jdk')
+  echo "Building DHIS2 $name (JDK $jdk)"
+  ./script/build "$name" "$jdk"
+done
+```
+
+
+# Kubernetes
+
+To test the image locally, use minikube
+
+```
+minikube start
+```
+
+[optional] before building the image, activate minikube's docker env so you don't need to pull the image
+```
+eval $(minikube docker-env)
+```
+
+build the image
+
+```
+./script/build 2.42.1
+```
+
+then if minikube is up, apply the example
+
+```
+DHIS2_FULL_VERSION=2.42.1 envsubst < test/kubernetes.yaml | kubectl apply -f -                                             
+```
+
+Make sure dhis2 and postgis are up
+
+```
+kubectl get pods -n dhis-test
+```
+
+Open the local dhis2 at http://localhost:8080/
+
+
+## Profiling with Async-Profile
+
+Get the pod name 
+
+```
+POD_NAME="..."
+```
+
+Start profiling
+
+```
+kubectl exec -it $POD_NAME -n dhis2 -- /bin/bash -c "/async-profiler/bin/asprof start -e wall jps && /async-profiler/bin/asprof status jps"
+```
+
+Do some requests / workload
+
+Stop profiling
+
+```
+kubectl exec -it $POD_NAME -n dhis2 -- /bin/bash -c "/async-profiler/bin/asprof stop -f /profile-%t.html jps"
+```
+
+Copy profile to local
+
+```
+kubectl cp $POD_NAME:/profile-*.html .
+```
+
+Ppen profile in browser
+
+```
+open profile-*.html
+```
+
+
 
 ## Implementation details
 

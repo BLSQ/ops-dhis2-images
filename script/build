@@ -1,9 +1,47 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+    echo "Usage: ./script/build <DHIS2_FULL_VERSION>"
+    exit 1
+fi
+
+# read -p "Is this build to be deployed on Kubernetes. Enter y or n (default is y): " KUBERNETES_BUILD
+KUBERNETES_BUILD=${KUBERNETES_BUILD:-y}
+
+if [ "$KUBERNETES_BUILD" != "y" ]; then
+    KUBERNETES_BUILD=false
+    echo "Building for local deployment"
+else 
+    KUBERNETES_BUILD=true
+    echo "Building for Kubernetes deployment"
+fi
+
+
 DHIS2_FULL_VERSION=$1
+JDK_VERSION=${2:-17}
 DHIS2_VERSION=$(echo $DHIS2_FULL_VERSION | cut -d'.' -f 1,2)
 DHIS2_TAG=$(echo $DHIS2_FULL_VERSION | cut -d'-' -f 1  | cut -d'.' -f 1,2,3)
-echo downloading 
-./script/download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
-echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION}
-docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION  -t blsq/dhis2:$DHIS2_VERSION -t blsq/dhis2:$DHIS2_FULL_VERSION -t blsq/dhis2:$DHIS2_TAG .
+
+
+# ## Webapp runner = Tomcat runner for DHIS2
+# Available webapp-runner versions:
+# - 8.5.51.0
+# - 9.0.91.0
+# - 10.1.46.0
+WEBAPP_RUNNER_VERSION=9.0.91.0
+
+
+# echo downloading
+# ./script/download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
+
+if [ "$KUBERNETES_BUILD" = true ]; then
+    echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION} meant for Kubernetes deployment "(JDK ${JDK_VERSION}, webapp-runner ${WEBAPP_RUNNER_VERSION})"
+    
+    TAG_SUFFIX="std"
+    
+    docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION --build-arg JDK_VERSION=$JDK_VERSION --build-arg WEBAPP_RUNNER_VERSION=$WEBAPP_RUNNER_VERSION -t blsq/dhis2:$DHIS2_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_FULL_VERSION-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_TAG-$TAG_SUFFIX -t blsq/dhis2:$DHIS2_TAG-$TAG_SUFFIX-alt .
+else
+    echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION} meant for local deployment "(JDK ${JDK_VERSION}, webapp-runner ${WEBAPP_RUNNER_VERSION})"
+    
+    docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION --build-arg JDK_VERSION=$JDK_VERSION --build-arg WEBAPP_RUNNER_VERSION=$WEBAPP_RUNNER_VERSION -t blsq/dhis2:$DHIS2_VERSION -t blsq/dhis2:$DHIS2_FULL_VERSION -t blsq/dhis2:$DHIS2_TAG .
+fi

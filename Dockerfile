@@ -1,28 +1,68 @@
-FROM openjdk:11-jdk
-WORKDIR /root/
+# --- Builder stage: download dockerize and webapp-runner ---------------------
+ARG JDK_VERSION=17
+FROM eclipse-temurin:${JDK_VERSION}-jre AS builder
 
-RUN  apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
-# install dockerize
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends wget ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# dockerize (used by the legacy / non-Kubernetes entry point to template dhis.conf and log4j.properties)
+# https://github.com/jwilder/dockerize
 ENV DOCKERIZE_VERSION=v0.5.0
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+RUN wget -q https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-# install jvm-mon
-ENV JVM_MON_VERSION=0.3
-RUN wget https://github.com/ajermakovics/jvm-mon/releases/download/$JVM_MON_VERSION/jvm-mon-$JVM_MON_VERSION.tar.gz \
-    && tar -C / -xzvf jvm-mon-$JVM_MON_VERSION.tar.gz \
-    && rm jvm-mon-$JVM_MON_VERSION.tar.gz
-# install webapp runner
-ENV WEBAPP_RUNNER_VERSION=8.5.51.0
-RUN wget https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O webapp-runner.jar
-# install dhis2 version 2.34
+
+# async profiler (java profiling tool)
+# https://github.com/async-profiler/async-profiler
+# https://aws.amazon.com/blogs/containers/analyzing-java-applications-performance-async-profiler-amazon-eks/
+ENV ASYNC_PROFILER_VERSION=3.0
+RUN wget https://github.com/async-profiler/async-profiler/releases/download/v${ASYNC_PROFILER_VERSION}/async-profiler-${ASYNC_PROFILER_VERSION}-linux-x64.tar.gz \
+    && mkdir -p /tmp/async-profiler \
+    && tar -xvzf ./async-profiler-${ASYNC_PROFILER_VERSION}-linux-x64.tar.gz -C /tmp/async-profiler --strip-components=1 \
+    && rm async-profiler-${ASYNC_PROFILER_VERSION}-linux-x64.tar.gz
+
+# webapp runner (tomcat runner for dhis2)
+# https://github.com/heroku/webapp-runner
+ARG WEBAPP_RUNNER_VERSION=10.1.46.0
+RUN wget -q https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O /tmp/webapp-runner.jar
+
+
+# --- Final stage: JDK runtime (jdk has extra tools like jstack and jps) --------------------------------------------
+ARG JDK_VERSION=17
+FROM eclipse-temurin:${JDK_VERSION}-jdk
+
+# Persist build date
+RUN date +%Y-%m-%d@%H:%M:%S > /build_date.txt
+
+# create non-root user, target dirs, and set ownership in a single layer
+RUN groupadd --gid 1001 appuser \
+    && useradd --uid 1001 --gid appuser --shell /bin/bash --create-home appuser \
+    && mkdir -p /opt/dhis2/target \
+    && chown -R appuser:appuser /opt/dhis2
+
+WORKDIR /opt/dhis2
+
+# bring in the prebuilt binaries from the builder stage
+COPY --from=builder --chown=appuser:appuser  /usr/local/bin/dockerize /usr/local/bin/dockerize
+COPY --from=builder --chown=appuser:appuser  /tmp/async-profiler/ /async-profiler/
+COPY --from=builder --chown=appuser:appuser /tmp/webapp-runner.jar ./webapp-runner.jar
+
+# add dhis2 version
 ARG DHIS2_VERSION
-# to trigger a rebuild eg 2.34.7-EMBARGOED
 ARG DHIS2_FULL_VERSION
 RUN echo ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
-ADD ./releases/dhis2-stable-$DHIS2_FULL_VERSION.war dhis.war
-# start process
+
+# add dhis2 war file
+ADD --chown=appuser:appuser ./releases/dhis2-stable-$DHIS2_FULL_VERSION.war dhis.war
+
+# templates (used by dockerize in the legacy / non-Kubernetes entry point)
+COPY --chown=appuser:appuser ./templates ./
+
+# entry point
+COPY --chown=appuser:appuser --chmod=755 ./entry_point.sh ./entry_point.sh
+
+USER appuser
+
 EXPOSE 8080
-COPY ./templates .
-COPY ./entry_point.sh ./entry_point.sh
-CMD ./entry_point.sh
+ENTRYPOINT ["./entry_point.sh"]

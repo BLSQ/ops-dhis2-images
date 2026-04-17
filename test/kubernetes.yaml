@@ -1,0 +1,200 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dhis2-test
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dhis2-db
+  namespace: dhis2-test
+type: Opaque
+stringData:
+  POSTGRES_DB: dhis2
+  POSTGRES_USER: dhis
+  POSTGRES_PASSWORD: dhis
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgis-data
+  namespace: dhis2-test
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgis
+  namespace: dhis2-test
+  labels:
+    app: postgis
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: postgis
+  template:
+    metadata:
+      labels:
+        app: postgis
+    spec:
+      containers:
+        - name: postgis
+          image: imresamu/postgis:16-3.5
+          args:
+            - "postgres"
+            - "-c"
+            - "max_locks_per_transaction=100"
+          envFrom:
+            - secretRef:
+                name: dhis2-db
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+          readinessProbe:
+            exec:
+              command: ["pg_isready", "-U", "dhis", "-d", "dhis2"]
+            initialDelaySeconds: 5
+            periodSeconds: 5
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: postgis-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgis
+  namespace: dhis2-test
+spec:
+  selector:
+    app: postgis
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: 5432
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dhis2-config
+  namespace: dhis2-test
+data:
+  dhis.conf: |
+    connection.dialect = org.hibernate.dialect.PostgreSQLDialect
+    connection.driver_class = org.postgresql.Driver
+    connection.url = jdbc:postgresql://postgis:5432/dhis2?sslmode=disable
+    connection.username = dhis
+    connection.password = dhis
+    connection.schema = update
+    connection.pool.max_size = 40
+
+    filestore.provider = filesystem
+    filestore.container = files
+    filestore.location =
+    filestore.identity =
+    filestore.secret =
+
+    metadata.audit.log = off
+    metadata.audit.persist = off
+    analytics.cache.expiration = 3600
+    analytics.table.unlogged = off
+
+    audit.metadata = DISABLED
+    audit.tracker = DISABLED
+    audit.aggregate = DISABLED
+    audit.logger = off
+    audit.database = off
+
+    server.base.url =
+
+    monitoring.api.enabled = true
+    monitoring.jvm.enabled = on
+    monitoring.dbpool.enabled = on
+    monitoring.hibernate.enabled = off
+    monitoring.uptime.enabled = on
+    monitoring.cpu.enabled = on
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dhis2
+  namespace: dhis2-test
+  labels:
+    app: dhis2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dhis2
+  template:
+    metadata:
+      labels:
+        app: dhis2
+    spec:
+      containers:
+        - name: dhis2
+          image: blsq/dhis2:${DHIS2_FULL_VERSION}
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: JAVA_OPTS
+              value: "-Xms1g -Xmx2g"
+          ports:
+            - containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: config
+              mountPath: /opt/dhis2/dhis.conf
+              subPath: dhis.conf
+            - name: files
+              mountPath: /opt/dhis2/files
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 300
+            periodSeconds: 30
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1.5Gi"
+            limits:
+              memory: "3Gi"
+      volumes:
+        - name: config
+          configMap:
+            name: dhis2-config
+        - name: files
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dhis2
+  namespace: dhis2-test
+spec:
+  type: NodePort
+  selector:
+    app: dhis2
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080

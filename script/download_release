@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 DHIS2_CHANNEL=stable
 DHIS2_VERSION=$1
 DHIS2_FULL_VERSION=$2
