@@ -53,7 +53,7 @@ then test locally
 
 Let's say we want to release a 2.33.8 version
 ```
-./script/build 2.33.8
+./script/build --local 2.33.8
 ```
 launch the docker compose
 
@@ -73,62 +73,57 @@ login with `admin` `district`
 
 note for testing "FILESTORE_PROVIDER" related properties you can just install taskr in the dhis2 apps.
 
+## Building images
+
+`versions.json` lists every DHIS2 release with its war URL, checksum, and the JDK / Tomcat
+to build it with (from the [DHIS2 compatibility matrix](https://docs.dhis2.org/en/manage/reference/dhis2-version-compatibility-matrix.html)):
+
+| DHIS2      | JDK (Corretto) | Tomcat (webapp-runner) |
+|------------|----------------|------------------------|
+| 2.42+      | 17             | 10                     |
+| 2.40, 2.41 | 17             | 9                      |
+| 2.35-2.39  | 11             | 9                      |
+| pre-2.35   | 8              | 9                      |
+
+Refresh it when DHIS2 publishes new releases (the matrix lives in `script/versions.py`):
+
+```
+./script/versions.py
+```
+
+Build one or more versions:
+
+```
+./script/build 2.42.7.1
+./script/build 2.41.3 2.40.12
+```
+
+Build everything (oldest first, failures are reported at the end):
+
+```
+./script/build --all                  # every version
+./script/build --all --supported      # only versions DHIS2 still supports
+./script/build --all --minor 2.41     # every 2.41.x
+```
+
+Other options: `--local` (tags without the `-std` suffix, for docker-compose),
+`--push` (push to Docker Hub after each build), `--dry-run` (show what would be built).
+Images are built for `linux/amd64` (override with `PLATFORM=...`).
+
 ## Releasing an image via github workflow
 
 Preferred method (better network connectivity compared to your home network)
 
 https://github.com/BLSQ/ops-dhis2-images/actions/workflows/publish.yml
 
-Make sure you are on the correct branch for the version you want to release:
-
-| Branch             | DHIS2 Versions          |
-|--------------------|-------------------------|
-| `237-and-before`   | 2.37 and below          |
-| `main`             | 2.38 → 2.40             |
-| `241`              | 2.41                    |
-
-Example: 
-- if you need to release **DHIS2 2.39** version, switch to the `main` branch before triggering the workflow.
-- if you need to release **DHIS2 2.36** version, switch to the `237-and-before` branch before triggering the workflow.
-
 ## Releasing an image locally
 
-Let's say we want to release a 2.33.8 version
-```
-./script/build 2.33.8
-```
-
-if not done yet, you need to login 
 ```
 docker login
-```
-
-then publish on dockerhub
-```
-./script/publish 2.33.8
+./script/build --push 2.42.7.1
 ```
 
 test that image in staging or test environment
-
-## Releasing all images
-
-Get all versions from DHIS2
-
-This will create all versions and their supported JDK version
-
-```
-python script/versions.py > versions.json
-```
-
-Iterate over versions to build all
-```
-jq -c '.[]' versions.json | while read i; do
-  name=$(echo $i | jq -r '.name')
-  jdk=$(echo $i | jq -r '.jdk')
-  echo "Building DHIS2 $name (JDK $jdk)"
-  ./script/build "$name" "$jdk"
-done
-```
 
 
 # Kubernetes
@@ -193,7 +188,7 @@ Copy profile to local
 kubectl cp $POD_NAME:/profile-*.html .
 ```
 
-Ppen profile in browser
+Open profile in browser
 
 ```
 open profile-*.html

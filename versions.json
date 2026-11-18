@@ -1,662 +1,1862 @@
 [
     {
-        "name": "2.42.0",
-        "jdk": 17
-    },
-    {
-        "name": "2.42.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.42.2",
-        "jdk": 17
-    },
-    {
-        "name": "2.42.3",
-        "jdk": 17
-    },
-    {
-        "name": "2.42.3.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.42.4",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.0",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.0.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.2",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.3",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.3.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.4",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.4.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.4.2",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.5",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.5.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.6",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.6.1",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.7",
-        "jdk": 17
-    },
-    {
-        "name": "2.41.8",
-        "jdk": 17
-    },
-    {
-        "name": "2.40.0",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.0.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.2.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.2.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.3",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.3.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.3.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.4",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.4.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.5",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.6",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.7",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.7.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.8",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.8.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.8.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.9",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.9.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.10",
-        "jdk": 11
-    },
-    {
-        "name": "2.40.11",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.0",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.0.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.1.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.1.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.2.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.3",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.3.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.4",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.4.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.5",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.6",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.7",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.7.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.8",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.9",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.9.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.10",
-        "jdk": 11
-    },
-    {
-        "name": "2.39.10.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.0",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.1.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.2.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.3",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.3.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.4",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.4.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.4.2",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.4.3",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.5",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.5.1",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.6",
-        "jdk": 11
-    },
-    {
-        "name": "2.38.7",
-        "jdk": 11
-    },
-    {
-        "name": "2.37.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.6.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.7.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.8.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.9",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.9.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.37.10",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.9",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.10",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.10.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.11",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.11.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.12",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.12.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.13",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.13.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.36.13.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.9",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.10",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.11",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.12",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.13",
-        "jdk": 8
-    },
-    {
-        "name": "2.35.14",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.34.9",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.33.9",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.32.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.0",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.1",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.2",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.3",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.4",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.5",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.6",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.7",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.8",
-        "jdk": 8
-    },
-    {
-        "name": "2.31.9",
-        "jdk": 8
+        "version": "2.43.0",
+        "url": "https://releases.dhis2.org/43/dhis2-stable-43.0.0.war",
+        "sha256": "6f75e6b4a42206a502b1fe40392e067bb9f7cafc3d439b5280e19e8a266ff9d9",
+        "releaseDate": "2026-05-05",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.43.0.1",
+        "url": "https://releases.dhis2.org/43/dhis2-stable-43.0.1.war",
+        "sha256": "233590576f38931a1bf926c7954f54d7a1049c14dff6e583a1b892de6abe36c7",
+        "releaseDate": "2026-06-10",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.43.1",
+        "url": "https://releases.dhis2.org/43/dhis2-stable-43.1.0.war",
+        "sha256": "96b856b1a2f04382e71841ef12ded341d6eacc80601d17c1f460c08524092fd2",
+        "releaseDate": "2026-08-03",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.43.2",
+        "url": "https://releases.dhis2.org/43/dhis2-stable-43.2.0.war",
+        "sha256": "de4ff1fa736ae93f8d9bf6ec025e5ab277dbcd1b8e0aa78664d5b047d4513c01",
+        "releaseDate": "2026-10-05",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.43.2.1",
+        "url": "https://releases.dhis2.org/43/dhis2-stable-43.2.1.war",
+        "sha256": "a040864660d391a37e3bfe2b913efab98ffc2786074db2dc4db0920e6978e52b",
+        "releaseDate": "2026-10-28",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.0",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.0.0.war",
+        "sha256": "7632d235a9a44a4ac0022003b9fa5c3ec03cb6b939d394ebbb131620b8eb1a37",
+        "releaseDate": "2025-05-07",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.1",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.1.0.war",
+        "sha256": "6f468d32497a6be7b7db47daf71db947fe829d0ac28945df186b627befb9ba3b",
+        "releaseDate": "2025-07-04",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.2",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.2.0.war",
+        "sha256": "c1e90e6b897e43c1c59afb1be050ed96d6b9a81ad6dcdb2aca15dd60b52d69a9",
+        "releaseDate": "2025-09-24",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.3",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.3.0.war",
+        "sha256": "3e40ad8fbc318074ab3b8285723d1a8c22e9f662a1f26212426eccd4c945390e",
+        "releaseDate": "2025-11-04",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.3.1",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.3.1.war",
+        "sha256": "638ebe8ada6b02160013581ba183733d045c2568e5e94aacd8b8f8a2bd891f05",
+        "releaseDate": "2025-11-18",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.4",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.4.0.war",
+        "sha256": "7082d9f0884664bdf20de138cff8e0e6f656d7a60429caf74034e1f1022eaad3",
+        "releaseDate": "2026-01-30",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.4.1",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.4.1.war",
+        "sha256": "63ecb2455f01d23ac8585d40725915593ad22a23ec38c7d386603b7f6632e8a9",
+        "releaseDate": "2026-05-06",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.5",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.5.0.war",
+        "sha256": "e692bcd92658c8d6e34a36c2e314abc7ee8a0529c54e4de80490f33b0aa5dfed",
+        "releaseDate": "2026-05-26",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.5.1",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.5.1.war",
+        "sha256": "7d8317c91f7401011ac504321a142f28ef70d985d87ab516e4a3e2c777406c84",
+        "releaseDate": "2026-06-10",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.5.2",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.5.2.war",
+        "sha256": "fef439460b13b68080660a15f6e1e7ac0afccd54ccbbe9ac454168268bdf0470",
+        "releaseDate": "2026-08-10",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.6",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.6.0.war",
+        "sha256": "3f7511c603ba18b4b65526b20a659fe7f69c9eed811d8aa61f56c5d3dcb1f8b3",
+        "releaseDate": "2026-08-26",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.7",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.7.0.war",
+        "sha256": "5c6495f5678b129478a75ea5a71333aa7c5497e937d7073d649a10b885d1e14f",
+        "releaseDate": "2026-10-20",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.42.7.1",
+        "url": "https://releases.dhis2.org/42/dhis2-stable-42.7.1.war",
+        "sha256": "cd6c8086b9a5a9e3678706414adfd32deb2b32bd004d7f0d1c2284b4f274035b",
+        "releaseDate": "2026-10-28",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 10,
+        "webappRunner": "10.1.60.0"
+    },
+    {
+        "version": "2.41.0",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.0.0.war",
+        "sha256": "a640ac6ca430f6bc2eeed1484622a1ae3911538d623b93027f2e34975b5a3c0f",
+        "releaseDate": "2024-05-29",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.0.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.0.1.war",
+        "sha256": "e1799cf7f69a073d3587b0643d840c0538ee52b04266639f314de537d68f8d12",
+        "releaseDate": "2024-06-25",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.1.0.war",
+        "sha256": "7122a75b7ecacf3188f76d49b0386524b9ab1385cf7a42d3f9d593c4626a482c",
+        "releaseDate": "2024-08-26",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.2",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.2.0.war",
+        "sha256": "7daf6c59733ff9ea9df7a8b56e80f9e3b6d505b8150400ff87a3107460004d13",
+        "releaseDate": "2024-11-06",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.3",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.3.0.war",
+        "sha256": "360e954fecfc4df26661a6427bd4e826f132de47e4e2a0fc14825296fe385e05",
+        "releaseDate": "2025-01-21",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.3.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.3.1.war",
+        "sha256": "8301d4b057029d7dbd2c289eef2841cc46a0206523ccbe9e2ae147a62d879ebd",
+        "releaseDate": "2025-04-08",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.4",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.4.0.war",
+        "sha256": "fce99498fcba4cc073cddf84663565d7f61f2ae726610c56751914372099bc87",
+        "releaseDate": "2025-05-19",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.4.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.4.1.war",
+        "sha256": "d51e5b5ee74dbe86461f7a9a9ad9922e9902eba9de47511888d1b5d934798838",
+        "releaseDate": "2025-07-01",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.4.2",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.4.2.war",
+        "sha256": "7b9fd6891dcfe50b1df0827901a1ec4f02d1a63fa0926b3b61ccfce273626977",
+        "releaseDate": "2025-07-17",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.5",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.5.0.war",
+        "sha256": "a503b1095e5b009d8fa93374f1c6ee119b34d6aab322bead0ae8e3690bcd17a6",
+        "releaseDate": "2025-08-18",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.5.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.5.1.war",
+        "sha256": "ea1cc5de64316d2c0efc6c6d196cb1806d06274b9f1a23ee9dcfa663b11ac246",
+        "releaseDate": "2025-09-12",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.6",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.6.0.war",
+        "sha256": "f6dd84f2e61a80f9914b9de53c7efd4dea29cb01693e8aff6fcb3e52f9e48f5c",
+        "releaseDate": "2025-10-14",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.6.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.6.1.war",
+        "sha256": "49b69a00fc01554779c0a1f5b1bb28d1c2f15d7c6512cf2c9133ea579b4f7c80",
+        "releaseDate": "2025-11-18",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.7",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.7.0.war",
+        "sha256": "267bb722be013d9a424a990f84ac5d872a70d72df83d327e9412e61e243fd210",
+        "releaseDate": "2025-12-15",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.8",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.8.0.war",
+        "sha256": "fee8dfe03961a3c305e4cf047172d0b8718e3e1d733499fef0ed3e273e05a1bc",
+        "releaseDate": "2026-03-05",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.8.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.8.1.war",
+        "sha256": "8a0f51bb5a96b577dd692725e9440f84ae41201b791c6d7ddf6b270d93c8192c",
+        "releaseDate": "2026-05-06",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.8.2",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.8.2.war",
+        "sha256": "df472168684d9488f849512fc60b49fab944c0d5096547c1d331243031dfe1ad",
+        "releaseDate": "2026-06-10",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.9",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.9.0.war",
+        "sha256": "58e635a28800743e6389095f83e2a7772c69f7e04f54865625e16b43307b7b63",
+        "releaseDate": "2026-07-01",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.9.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.9.1.war",
+        "sha256": "28bfe7be502eb9c30483f13e572be922bdbce0f5696ca732605632ea3b58248d",
+        "releaseDate": "2026-08-10",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.10",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.10.0.war",
+        "sha256": "e5cd3afa0e1f49e79c2f69cb7e18436abb8f4453edda7d291e3f4b1dcf963e18",
+        "releaseDate": "2026-09-08",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.10.1",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.10.1.war",
+        "sha256": "9a4773da4dc195f02f5db8462c9d9cf51e5f1a360123136627f309554839e071",
+        "releaseDate": "2026-10-28",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.41.11",
+        "url": "https://releases.dhis2.org/41/dhis2-stable-41.11.0.war",
+        "sha256": "d9d18d50fbfc975ccb77149e9f294078db9cb79bd93da47a6d9136be653b9a54",
+        "releaseDate": "2026-11-09",
+        "supported": true,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.0",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.0.0.war",
+        "sha256": "7b335fccc94aae91e5d0789dbadbb10d6adf967b726eedd15f97bba211f024ce",
+        "releaseDate": "2023-05-10",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.0.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.0.1.war",
+        "sha256": "fe0e95d88a8d1a1a0178f100098ff4955d9974104d8dd94885aa889bc9a50ac4",
+        "releaseDate": "2023-06-30",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.1.0.war",
+        "sha256": "e9d50dbe32a920886ed8cb67c62b18b9a78e05bf3e77a4cb96f305a4c36b2a8b",
+        "releaseDate": "2023-09-14",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.2",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.2.0.war",
+        "sha256": "336896b8bd357572081a0a9ab72b3d8244e47468863c8a76291c9ca4d6c97c71",
+        "releaseDate": "2023-11-22",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.2.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.2.1.war",
+        "sha256": "040c0c77735ba17f456163812c10f5c2c24f082dbae66fbce3a007332f00f5ab",
+        "releaseDate": "2024-01-12",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.2.2",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.2.2.war",
+        "sha256": "4bd751348d6c62cfe8d34385d7399cd76e6c1a1fd46de2b0ef0ab9db7aa41c6e",
+        "releaseDate": "2024-01-24",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.3",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.3.0.war",
+        "sha256": "e80a483eebcc0a77c114bf8af24ad2eb2957b02d1d75dc2603cdc57aea98e692",
+        "releaseDate": "2024-02-19",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.3.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.3.1.war",
+        "sha256": "67f4684ea6a18714c7b743ce8392ba634dbb9f7d1c9e5da55bf69aef9e17bcc7",
+        "releaseDate": "2024-05-14",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.3.2",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.3.2.war",
+        "sha256": "50445359feb494a668d411b5d8e3087d8e342c01284ea99607ec97baf441fb5c",
+        "releaseDate": "2024-06-04",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.4",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.4.0.war",
+        "sha256": "fe05b421a08bec6f7d5d3ea99bf78d61fea69dd427fba37f9fc72144bed244bd",
+        "releaseDate": "2024-07-01",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.4.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.4.1.war",
+        "sha256": "ab982706ad30863f792c76b37544e49b626f16ee25550898e737c880887e4bfb",
+        "releaseDate": "2024-07-04",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.5",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.5.0.war",
+        "sha256": "eefb7538453987a21d357e03dea02212b83e0d2ccdee1c11d35f519d07e9225e",
+        "releaseDate": "2024-09-13",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.6",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.6.0.war",
+        "sha256": "ac0ff4187dee2d4996c459b73f32dbc2e8b7ae5787a939ea298c18388fc8aedc",
+        "releaseDate": "2024-11-25",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.7",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.7.0.war",
+        "sha256": "bc6dc7500ebd38a93fbd264f5986fbf731797400f35001c92e10ea1bef1ad018",
+        "releaseDate": "2025-02-10",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.7.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.7.1.war",
+        "sha256": "01e4e77292f54eb584ae22907804f3058e5cc399452b868748d6d4b449897f10",
+        "releaseDate": "2025-04-08",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.8",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.8.0.war",
+        "sha256": "051b504d629412a8cbfea308c2322261e6e52940752c863671d43a135d66515c",
+        "releaseDate": "2025-06-19",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.8.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.8.1.war",
+        "sha256": "7d05f44b47e56bb6f825450a5323c8a2cde36b54651bd8ddd44ff64f6ac6e242",
+        "releaseDate": "2025-07-01",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.8.2",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.8.2.war",
+        "sha256": "5c882b6656d2c7116a9a2fb632a9cde2e5530dd1ecaea459b8dc6b43bd6ef6e7",
+        "releaseDate": "2025-07-17",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.9",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.9.0.war",
+        "sha256": "6497be88f1bdba37455da6cfc698ad3bbfdf463d688920588de89a3633cd1aad",
+        "releaseDate": "2025-09-08",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.9.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.9.1.war",
+        "sha256": "bd0513a600e3b2cc0b84508b5e76858f8006651908ff35cbb20c0c379b23489e",
+        "releaseDate": "2025-11-18",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.10",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.10.0.war",
+        "sha256": "c8ac65569d929e26e66c33986fa37fe9446c2f8ba8f535ee5e5cfdc473557fcf",
+        "releaseDate": "2025-11-25",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.11",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.11.0.war",
+        "sha256": "f4c61ccac9424accc0b1c7a8e0239e2eae0a055c08ff9d91b6c92863cb5f92c0",
+        "releaseDate": "2026-02-10",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.11.1",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.11.1.war",
+        "sha256": "385b618eaa26714dc87baa688b8ce9eb67d9f7dcdfa17004ef763893e2635567",
+        "releaseDate": "2026-06-10",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.40.12",
+        "url": "https://releases.dhis2.org/40/dhis2-stable-40.12.0.war",
+        "sha256": "764c5c523862f59bf8ffd6cce4326de3b2723ed0f6367707d9f3faf11bcbbb13",
+        "releaseDate": "2026-06-23",
+        "supported": false,
+        "jdk": 17,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.0",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.0.0.war",
+        "sha256": "d26f81722e416ff4a82e515aba2d78d8e07c2f66f4606944bee0b57e9f00c83b",
+        "releaseDate": "2022-10-27",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.0.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.0.1.war",
+        "sha256": "4036074528a08d01dbedd30317aa15d13632ec237d9e6c829e7f2900ee3525d1",
+        "releaseDate": "2022-12-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.1.war",
+        "sha256": "915b6dd57b820fb0f1cb4d37133fa4b67da2e73cec517551251f45c66dee6a94",
+        "releaseDate": "2023-02-07",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.1.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.1.1.war",
+        "sha256": "81d85cf6589a270410e22517ab500787a2e81d25ada9676119471c729c27c599",
+        "releaseDate": "2023-02-15",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.1.2",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.1.2.war",
+        "sha256": "7f246c4026c4d936bacbc75a406084dd76a9bb7b2a5673319b5c6c8decde05ae",
+        "releaseDate": "2023-04-14",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.2",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.2.war",
+        "sha256": "9b7911b607b3340f60e95686534f8ce3beccfa056e6c20777029f8af0b69a9b0",
+        "releaseDate": "2023-06-07",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.2.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.2.1.war",
+        "sha256": "de9b19a7401a74d458a6c2c8aba3572e561ed0430e2671b533f748b949c3a8a6",
+        "releaseDate": "2023-06-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.3",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.war",
+        "sha256": "4430be35dc45ad42b71ecaa8feda0e598a1e6676a179cf087a28c04ffb78cd0b",
+        "releaseDate": "2023-10-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.3.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.1.war",
+        "sha256": "f3a1ce76b2791b7922a85262eeb4833e04cb8b5af79daf40b6513f95ac91a5c9",
+        "releaseDate": "2023-11-16",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.4",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.4.war",
+        "sha256": "c6dfaf6d20706cda634ec638c6bbe99efb604fc0867d670a5654a6d4391b1860",
+        "releaseDate": "2023-12-20",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.4.1",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.4.1.war",
+        "sha256": "5165fa457e5c08be132a6f5cf78e2828ae2e487efd1013403fee6b62191af0ba",
+        "releaseDate": "2024-01-12",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.5",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.5.war",
+        "sha256": "534a4185a86928b9539cdca04ba03d11b1509feec7ca9f3abae8802621f94f9d",
+        "releaseDate": "2024-04-08",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.6",
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.6.war",
+        "sha256": "637a8220eb372038afe199b10b2aec48d188d9950610ddff8b7e7ca15971dd41",
+        "releaseDate": "2024-08-12",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.7",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.7.0.war",
+        "sha256": "917cd7aacc1f56fc522777bb107718046096f0c94fd83022ef1a97db54768e02",
+        "releaseDate": "2024-10-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.7.1",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.7.1.war",
+        "sha256": "dd5f48a1c90691f47e8b1295a86948a75832fe1080fef497f071c1149c5f74f2",
+        "releaseDate": "2024-12-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.8",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.8.0.war",
+        "sha256": "19b88337f73f8d89dd3d8bf88ad034296a33a89fb51ee6085a8039a53b335bcc",
+        "releaseDate": "2024-12-18",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.9",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.9.0.war",
+        "sha256": "82e9fe288b5258590077dbab09b1a89f60a2062dfa918bfbf4e990934d9ec6cb",
+        "releaseDate": "2025-03-11",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.9.1",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.9.1.war",
+        "sha256": "760b894c0bd46ab29279202e88c2c5f631b5df693d54976de202949d175802cd",
+        "releaseDate": "2025-04-08",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.10",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.10.0.war",
+        "sha256": "2bf6e9fcbf92eccbed3ccc92621bceb8da5168b4a01ca32d71717a92de5465c7",
+        "releaseDate": "2025-07-03",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.39.10.1",
+        "url": "https://releases.dhis2.org/39/dhis2-stable-39.10.1.war",
+        "sha256": "be7b157a34eff18a5e7130bd64d51c4805537015b0303727b6863d78064c8d7b",
+        "releaseDate": "2025-07-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.0",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.0.war",
+        "sha256": "2b097c37ec32abb1741870216659cab154cf3939a9169d42d10f6c846273561d",
+        "releaseDate": "2022-05-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.1.0.war",
+        "sha256": "45290144b9ac23b28b6497371c666dd9de3bb2090a5db4eff82938460deb191a",
+        "releaseDate": "2022-07-04",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.1.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.1.1.war",
+        "sha256": "87fcf88880a13e689e41a6d3b567c76fd7e629fd56a80236de681d651025415c",
+        "releaseDate": "2022-08-08",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.2",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.2.0.war",
+        "sha256": "e1ed35d0d53f06d28c46afbae1565c79b702f923a3802ba790bfd705311cbb37",
+        "releaseDate": "2022-11-25",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.2.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.2.1.war",
+        "sha256": "f46a92f60092a78770ebf4c9840de81c3e421d50a4759465ddc7ea6543f9a322",
+        "releaseDate": "2022-12-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.3",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.3.war",
+        "sha256": "4d085eb6e757897e922dbe7c25fbfa1539be09af662aae3612c773a7a8dbc64e",
+        "releaseDate": "2023-03-22",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.3.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.3.1.war",
+        "sha256": "19e55e2ceb271755017e3d60b5498ac2bccf16704fda3fc1afaa7c849351a93c",
+        "releaseDate": "2023-04-14",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.4",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.0.war",
+        "sha256": "922fb3e8bc982be065fa65ae2af699f9ea7a22e8281fb70253fa9b8f71252690",
+        "releaseDate": "2023-06-19",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.4.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.1.war",
+        "sha256": "81c05d521a8b347615a3e35627dca80bec82f48deeff7aee3db0eb32056bd14d",
+        "releaseDate": "2023-06-21",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.4.2",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.2.war",
+        "sha256": "7b20230fdb938c9f40ce99234b44a8bc83f7b6dfd8d899fc877ad364505bdb8a",
+        "releaseDate": "2023-06-22",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.4.3",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.3.war",
+        "sha256": "dc2d2c5d0de8ea5dee674cfe3497568f19791eddade0abe9980945ea926351eb",
+        "releaseDate": "2023-06-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.5",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.war",
+        "sha256": "e1814bfc920b21dbf9f0879b61a3dac88c1ebf7562417c14a52e45a0458316c9",
+        "releaseDate": "2023-11-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.5.1",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.1.war",
+        "sha256": "e0bf72baa7ec7a4567014586ff7d1f4d80ae48a582093321bc64f2965e417c29",
+        "releaseDate": "2024-01-12",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.6",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.6.war",
+        "sha256": "3819fe625d51cc4dbee5754216d0b75a28566f98dadb37ebbe07a2ec5c9e9087",
+        "releaseDate": "2024-01-25",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.38.7",
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.7.war",
+        "sha256": "cb9d956731454babd57df4d50dab6f5eaca5ef33af14ffde1e99d6aa2b27dd5b",
+        "releaseDate": "2024-06-25",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.0",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.0.war",
+        "sha256": "32d60a7190b34763b9a880d2419672c9282ba59316957d09bf39dad765cfa237",
+        "releaseDate": "2021-11-11",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.1",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.1.war",
+        "sha256": "98c097a89415700242cf521eafc830f6580b04cfbf1c3f6735363f8b730c55af",
+        "releaseDate": "2021-12-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.2",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.2.war",
+        "sha256": "89d9b4f1fbe0c70b46593d69cad44ecd370696fe32600e8f79ddb5441fb9d28f",
+        "releaseDate": "2021-12-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.3",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.3.war",
+        "sha256": "caf73f6d8c9ec65cb29364d019a236a3fa71eda546a243b485cc6f5769a4d5df",
+        "releaseDate": "2022-02-18",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.4",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.4.war",
+        "sha256": "516b741160f94e4d53226afa4851a4517db09b167145506a19109ed90bbe034c",
+        "releaseDate": "2022-03-11",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.5",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.5.war",
+        "sha256": "17c7ff862f97abe927f81a400bd0241ccbbc96b8f192969ea7d0d9578a62ed21",
+        "releaseDate": "2022-04-06",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.6",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.6.0.war",
+        "sha256": "01f6454b211c59b4c0101358fb8f118277f0d10f03d953d5f95be9984fd90a73",
+        "releaseDate": "2022-04-14",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.6.1",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.6.1.war",
+        "sha256": "a7c4ca3b88ef3438c8317aa2f265bf16bffd37da7853372c14d402cf6a51a9e5",
+        "releaseDate": "2022-06-01",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.7",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.7.0.war",
+        "sha256": "1e00114c2605d8ba55984a3d85aeac4c883bc9e736e363c0640a1ff678edbb5c",
+        "releaseDate": "2022-06-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.7.1",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.7.1.war",
+        "sha256": "357b2cad9002ef6037c4f26af1a02c2729e430d49e58f4e7aeec63edeefc3709",
+        "releaseDate": "2022-06-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.8",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.8.0.war",
+        "sha256": "7957fb2c9ca977cd15835d8f2bde8b7a9e14581ffc4a0c2e34f60d3ae978da4b",
+        "releaseDate": "2022-09-26",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.8.1",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.8.1.war",
+        "sha256": "043069c53d62f0f1dc7f727f3c2bd3cf160c647d765ac31703758b5a7009076a",
+        "releaseDate": "2022-12-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.9",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.9.war",
+        "sha256": "c96b3aa18ae2533bb36eaeb5d40a3805ff594c0a4652d88ab0448f17ec792126",
+        "releaseDate": "2022-12-22",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.9.1",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.9.1.war",
+        "sha256": "2d3e88f9f5693cf6b53bd2be18b60f7c0d7aedfa1c270f3587a20e2f8eb350bc",
+        "releaseDate": "2023-04-14",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.37.10",
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.10.war",
+        "sha256": "5049f10af5385f09c3932cd00e47649eb5baede2aace2ec693c12b4f5b40855c",
+        "releaseDate": "2023-08-21",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.0",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.0.war",
+        "sha256": null,
+        "releaseDate": "2021-04-27",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.1",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.1.war",
+        "sha256": "6a7a3f010e9c1cd46e2eb259cc769a37a1ba6a8cd95d0144cd25a12ba0ed8fc6",
+        "releaseDate": "2021-06-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.2",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.2.war",
+        "sha256": "360780c83a78cbda8ab6c17dcb511398c2817537526d08b0cbad88c78e33e0a3",
+        "releaseDate": "2021-06-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.3",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.3.war",
+        "sha256": "8d1e4a68dd4c7a95e71c68b22457608edb099c13ce848e405850381428a58485",
+        "releaseDate": "2021-07-08",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.4",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.4.war",
+        "sha256": "d5f1339bca673303fe1454ca5281ee0fb157bdb5e8bf04e3aac03e2c906d34b1",
+        "releaseDate": "2021-10-11",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.5",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.5.war",
+        "sha256": "273c5fbf37bdb9b2aff5bade89b05981eeb3fb811a1badf2c3f3e6dc866c7cd4",
+        "releaseDate": "2021-12-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.6",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.6.war",
+        "sha256": "042d9d05d806f43518e39f683c1abc1afd67a0b94765168de358a25781c63e90",
+        "releaseDate": "2021-12-16",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.7",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.7.war",
+        "sha256": "05d1f4e0f358270755376241ffdd061cd0e072b4092d3fb0f925494ffa205439",
+        "releaseDate": "2022-01-18",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.8",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.8.war",
+        "sha256": "4e24cbe09572fa08d977306543fe5d71ef3384ae3096571ccb29dc250f95d813",
+        "releaseDate": "2022-02-02",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.9",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.9.war",
+        "sha256": "205468284545c49a4d4da927902789d12d5911cd8001af60f7a9d275ed0b153d",
+        "releaseDate": "2022-03-11",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.10",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.10.0.war",
+        "sha256": "1e2f6488b3ab1bf395dedbf38503056e2833039e509223941444da774063b598",
+        "releaseDate": "2022-04-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.10.1",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.10.1.war",
+        "sha256": "ca13a19950d23fa9f43600e8c93b40e186f5e6a87050ee03a4d67261981eb801",
+        "releaseDate": "2022-06-01",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.11",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.11.0.war",
+        "sha256": null,
+        "releaseDate": "2022-06-01",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.11.1",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.11.1.war",
+        "sha256": "58a83c543e0f2be712857855215418d71388d2fd618d1d925ad1e01abcf03231",
+        "releaseDate": "2022-06-03",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.12",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.12.0.war",
+        "sha256": "cd3216db5c058fd9163b7c577abeea3dfd8aeb3195081a7c31113f335603dadb",
+        "releaseDate": "2022-08-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.12.1",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.12.1.war",
+        "sha256": "666f0ba35f870f0996ccc26443d08f7bc93929613e4dfe256f2fa0c376846175",
+        "releaseDate": "2022-12-05",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.13",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.13.0.war",
+        "sha256": "a77c1de8729d074136fe2d05902fafe0fd2ed028d3c0989fbb68993f737a0526",
+        "releaseDate": "2022-12-15",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.13.1",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.13.1.war",
+        "sha256": "f8d8b929cac8e365bec82a2f297797f71a910ce42a36d427171d60d0c92c5578",
+        "releaseDate": "2022-12-16",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.36.13.2",
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36.13.2.war",
+        "sha256": "d1da8f915ba172486a5348d3945217212784573835ce918ea802fc86382b5b80",
+        "releaseDate": "2022-12-21",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.0",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.0.war",
+        "sha256": "ae25f09908d7b6b14a032fbd331ca6c4117045286ade3b54d5833b462f42ce3b",
+        "releaseDate": "2020-10-19",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.1",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.1.war",
+        "sha256": "e99263bcb67a8900e062972c95c11e0d3d430ab8e905b5afa4c60b76db8c93e8",
+        "releaseDate": "2020-12-14",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.2",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.2.war",
+        "sha256": "c1247abcf3c8a6b40e98a899fa46bd6a1a8f57d4554806f667fb9ec8dd434b2c",
+        "releaseDate": "2021-03-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.3",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.3.war",
+        "sha256": "ede51c1b35dc907afa03a0b13e06780010c56c1aa268c1fab2182b2661b0893b",
+        "releaseDate": "2021-03-29",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.4",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.4.war",
+        "sha256": "21745175a798dadbc9ce0e40fea179e62dfb88b93951837d29dc2b458f0c965e",
+        "releaseDate": "2021-05-25",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.5",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.5.war",
+        "sha256": "3b9681d8b43c0556356d96bcb91f9cf834476af24592244334aa8ae9310ef04a",
+        "releaseDate": "2021-06-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.6",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.6.war",
+        "sha256": "2f9363dd4a8bca777f08b646b9a88d54eb7c670d614ff930ab34df73429aabd3",
+        "releaseDate": "2021-06-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.7",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.7.war",
+        "sha256": "066a5ce1082f9fb8bc9e657ddb51057d0a78ffa0c1cfe6fa39b28054fe23aa72",
+        "releaseDate": "2021-08-30",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.8",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.8.war",
+        "sha256": "d42553b3a010211a19be3b90f4c1be26cc6a192d7ea435fe680744c6463f364d",
+        "releaseDate": "2021-10-07",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.9",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.9.war",
+        "sha256": "fec959dc9eb03de918e3c5af2e4c8e415fc2c5920d713d98bf8c2909737f720e",
+        "releaseDate": "2021-12-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.10",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.10.war",
+        "sha256": "31ae514b578915b437846974451de99d0ea6d118cef7a6fa18116f8eabd0d6ad",
+        "releaseDate": "2021-12-16",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.11",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.11.war",
+        "sha256": "13ea1177077e8a34186698f994ffdfd3b72fbadc935eab9835fae0f7e535efe6",
+        "releaseDate": "2022-01-10",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.12",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.12.war",
+        "sha256": "fee63da3e5c4a7118ba6dc1483b0dca9bf995553ec45aa30349949a3e2a7068b",
+        "releaseDate": "2022-02-17",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.13",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.13.war",
+        "sha256": "4f38b3e34869ec11c8bb6d015bf4ea9efdf2111651f58b2b3cfa9775faae18d7",
+        "releaseDate": "2022-04-01",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.35.14",
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35.14.war",
+        "sha256": "39d3dcc55de6920c6fe90af00233db4d2ced14f5ac560026d18de0fe6862d39e",
+        "releaseDate": "2022-06-07",
+        "supported": false,
+        "jdk": 11,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.0",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.0.war",
+        "sha256": "5581ba1d75623ee752479100403fbabb4291c3773a9906c19b9f7d1805c24956",
+        "releaseDate": "2020-04-24",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.1",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.1.war",
+        "sha256": "71302c375f44a89f6a9f218c5ec01c2da953cf28c4279918062637725887981c",
+        "releaseDate": "2020-07-14",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.2",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.2.war",
+        "sha256": "a0df86e915fac5ed6ae162ee945d4aedba8f3a0a26ada352e59bd2f5668ae38a",
+        "releaseDate": "2020-10-29",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.3",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.3.war",
+        "sha256": "a579df3a7f55e15fff78c0ef46f85fe01ef2afd865ba69859a48a3cef84eddab",
+        "releaseDate": "2021-01-22",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.4",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.4.war",
+        "sha256": null,
+        "releaseDate": "2021-03-16",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.5",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.5.war",
+        "sha256": "fbf3243517f19c0d8f9bcdb2c198f0e0e8715505328acb9b27cf69b0ba380ff9",
+        "releaseDate": "2021-06-17",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.6",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.6.war",
+        "sha256": "d3b1126a764353639a7261470ff3553fbffab3ea9866bcc274e57abad7023d96",
+        "releaseDate": "2021-06-24",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.7",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.7.war",
+        "sha256": "65eaf9cf673a66fa2cf2b858d1137b3e241c814c1b62c8df919109d04e57c553",
+        "releaseDate": "2021-10-04",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.8",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.8.war",
+        "sha256": "94ddd26e7004edf8e63e6c0d34d7e575b6d44d82469423a2d463aca6bf4ef9ae",
+        "releaseDate": "2021-12-10",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.34.9",
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34.9.war",
+        "sha256": "081521f3a8aa4a08eda9b9bc2c449087057a06ca94fea30a344c9219b6afe9b9",
+        "releaseDate": "2021-12-16",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.0",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.0.war",
+        "sha256": "075a604d390e9fbc81d3c4c0a79e5f9043213c42d4de35bdfc6209b9831d704e",
+        "releaseDate": "2019-10-03",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.1",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.1.war",
+        "sha256": "232c3e9bc00f9b55051c624221796f0e16113e5fd141a2e0eef0273da3514c8d",
+        "releaseDate": "2019-11-27",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.2",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.2.war",
+        "sha256": "19cd8902cec278b37ee74170766615efe168d1eaafb8bf253e5ee891a33eb60d",
+        "releaseDate": "2020-02-20",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.3",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.3.war",
+        "sha256": "dbb9d0f06d3b76e5001419f48b5cd4b4d5d226e21eabaaff6f55b21c4fdde9bf",
+        "releaseDate": "2020-04-08",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.4",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.4.war",
+        "sha256": "eb0c037318872cbdf1ecd2e145a257f5fbe11636f068d3020afba42482c0d922",
+        "releaseDate": "2020-05-20",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.5",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.5.war",
+        "sha256": "42363b249ffba5fe510c0d558d4c58f1a5d7af063cbf741978fe5c2ece845266",
+        "releaseDate": "2020-07-14",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.6",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.6.war",
+        "sha256": "355035decddf75792ac41369d7b8e5c24a9ed232df6433d011c9681aa0944a6c",
+        "releaseDate": "2020-08-20",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.7",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.7.war",
+        "sha256": "07ab0bb270fb3c6552108511e7192680c83687c4fb975d978dd18e75ca6d02c7",
+        "releaseDate": "2020-11-19",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.8",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.8.war",
+        "sha256": "cebc681624ee0d3b0ba4ce8cdce888029114b563d64d0e489f45389535cf9cc1",
+        "releaseDate": "2021-02-08",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.33.9",
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33.9.war",
+        "sha256": "f2d790e4f58b65064c1a6576db033b8816338eac829325659cff24bee67bf92d",
+        "releaseDate": "2021-06-10",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.0",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.0.war",
+        "sha256": "f405c32a8210ccff948f9da7da68e344765df263a499f0d4eb6a173a02c81cd9",
+        "releaseDate": "2019-05-07",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.1",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.1.war",
+        "sha256": "662d317629bde065c797913ea796eb542b6deae9ed95ad9c0b55eea20eef04c3",
+        "releaseDate": "2019-07-05",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.2",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.2.war",
+        "sha256": "671377104b680bfc0f1283d74c639a081e5b2c0d7a57a56f1a785440a1034768",
+        "releaseDate": "2019-09-06",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.3",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.3.war",
+        "sha256": "07fec0dbb1fbd0ad262e82bcd3fddfaf6bf78ea5149ff7d326e72b3b34683238",
+        "releaseDate": "2019-11-21",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.4",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.4.war",
+        "sha256": "5e5be41ce52de8be8d0e7344aceb2c612fc78639c79e52ead24070b5fdf5895d",
+        "releaseDate": "2020-01-31",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.5",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.5.war",
+        "sha256": "9601232d8c2aaa3dea552bf697ee2952c35b94fb19b3ede44d6ce20425f4eac0",
+        "releaseDate": "2020-05-12",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.6",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.6.war",
+        "sha256": "40ecb5d4b6b09296b14d7c241a24bedc0c9631ba20b94fd86aa6272e26d40707",
+        "releaseDate": "2020-07-14",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.32.7",
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32.7.war",
+        "sha256": "7d3150f2f9e45f84a77663f5879fccbf49cfbc6e0a95846f2b6ae0330d866cc9",
+        "releaseDate": "2020-11-12",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.0",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.0.war",
+        "sha256": "7fa3fc486c2b3e024cbb78a747817b5b3ceed01fec1499949ea601e220267777",
+        "releaseDate": "2018-12-03",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.1",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.1.war",
+        "sha256": "1b87928da8e59d28dd27d0d00bb27fd77bcfa52df0c064488061d4834eda261c",
+        "releaseDate": "2019-02-07",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.2",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.2.war",
+        "sha256": "43db527cfdba5d6c9308d6cbd8b550b1951873c5f73f4dc1ad4b45148450730f",
+        "releaseDate": "2019-03-22",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.3",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.3.war",
+        "sha256": "1fb9e678e65c66b8344a79895944c1d264e84a2fdac7a2ac9415c66daf4d642d",
+        "releaseDate": "2019-04-05",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.4",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.4.war",
+        "sha256": "05c168909f9a704f547e1f0d87be38e598c03abf82447ab94c2e75a78b670086",
+        "releaseDate": "2019-06-28",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.5",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.5.war",
+        "sha256": "0e9479ce766a961c43e90f9e48a0ae6cddfe85b7ab210b8fba5c43750d65dd9a",
+        "releaseDate": "2019-08-15",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.6",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.6.war",
+        "sha256": "8ca58289dec88263f587a0f9e5d78090e54e573aba321a0e86d2c0b8481ec541",
+        "releaseDate": "2019-10-25",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.7",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.7.war",
+        "sha256": "05417f3337c1ca687e52fde21f2f17ca62265bc5d2ae831db1771487fd463135",
+        "releaseDate": "2020-01-09",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.8",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.8.war",
+        "sha256": "de580c37937ed0008486d38abd4652f5726fd1ab8eacc6a8324d464aaeef3bb4",
+        "releaseDate": "2020-02-11",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
+    },
+    {
+        "version": "2.31.9",
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31.9.war",
+        "sha256": "3e371eb8022d8d07f5fdd879558a55008206e69eb0b7bb91dd6944494ad92ee0",
+        "releaseDate": "2020-05-27",
+        "supported": false,
+        "jdk": 8,
+        "tomcat": 9,
+        "webappRunner": "9.0.98.0"
     }
 ]

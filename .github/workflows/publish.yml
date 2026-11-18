@@ -27,5 +27,5 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and publish image
-        run: ./script/release ${{github.event.inputs.version }}
+        run: ./script/build --push ${{ github.event.inputs.version }}
 

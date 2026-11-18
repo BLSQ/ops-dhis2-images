@@ -1,10 +1,11 @@
-# --- Builder stage: download dockerize and webapp-runner ---------------------
+# Corretto major version (8, 11, 17), set per DHIS2 version by script/build
 ARG JDK_VERSION=17
-FROM eclipse-temurin:${JDK_VERSION}-jre AS builder
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+# --- Builder stage: download dockerize and webapp-runner ---------------------
+FROM amazonlinux:2023 AS builder
+
+RUN dnf install -y wget tar gzip \
+    && dnf clean all
 
 # dockerize (used by the legacy / non-Kubernetes entry point to template dhis.conf and log4j.properties)
 # https://github.com/jwilder/dockerize
@@ -24,19 +25,20 @@ RUN wget https://github.com/async-profiler/async-profiler/releases/download/v${A
 
 # webapp runner (tomcat runner for dhis2)
 # https://github.com/heroku/webapp-runner
-ARG WEBAPP_RUNNER_VERSION=10.1.46.0
+ARG WEBAPP_RUNNER_VERSION=10.1.60.0
 RUN wget -q https://repo.maven.apache.org/maven2/com/heroku/webapp-runner-main/${WEBAPP_RUNNER_VERSION}/webapp-runner-main-${WEBAPP_RUNNER_VERSION}.jar -O /tmp/webapp-runner.jar
 
 
 # --- Final stage: JDK runtime (jdk has extra tools like jstack and jps) --------------------------------------------
-ARG JDK_VERSION=17
-FROM eclipse-temurin:${JDK_VERSION}-jdk
+FROM amazoncorretto:${JDK_VERSION}-al2023
 
 # Persist build date
 RUN date +%Y-%m-%d@%H:%M:%S > /build_date.txt
 
 # create non-root user, target dirs, and set ownership in a single layer
-RUN groupadd --gid 1001 appuser \
+RUN dnf install -y shadow-utils \
+    && dnf clean all \
+    && groupadd --gid 1001 appuser \
     && useradd --uid 1001 --gid appuser --shell /bin/bash --create-home appuser \
     && mkdir -p /opt/dhis2/target \
     && chown -R appuser:appuser /opt/dhis2

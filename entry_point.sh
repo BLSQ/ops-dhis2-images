@@ -1,12 +1,14 @@
 #!/bin/bash
 
 cat << "EOF"
-                    
-##  # # ###  ## ### 
-# # # #  #  #     # 
-# # ###  #   #  ### 
-# # # #  #    # #   
-##  # # ### ##  ### 
+
+#      ""#                             #  #        "            mmmm
+#mmm     #     mmm    mmmm          mmm#  # mm   mmm     mmm   "   "#
+#" "#    #    #   "  #" "#    #    #" "#  #"  #    #    #   "      m"
+#   #    #     """m  #   #         #   #  #   #    #     """m    m"
+##m#"    "mm  "mmm"  "#m##    #    "#m##  #   #  mm#mm  "mmm"  m#mmmm
+                         #
+                         "
 EOF
 
 echo "Bluesquare DHIS2 Container"
@@ -17,7 +19,7 @@ else
     echo "DHIS2 Version: ${DHIS2_VERSION}"
 fi
 
-echo "                               
+echo "
 Build Date: $(cat /build_date.txt)
 Running as: $(whoami)
 Date: $(date +"%Y-%m-%d@%H:%M:%S")
@@ -25,10 +27,10 @@ bluesquare.org
 ---------------------------------
 "
 
-if [ -z "$DHIS_GOOGLE_AUTH" ]; then 
-     echo "DHIS_GOOGLE_AUTH var is blank or unset not creating google auth.json"; 
-else 
-     echo $DHIS_GOOGLE_AUTH | base64 --decode > dhis-google-auth.json; 
+if [ -z "$DHIS_GOOGLE_AUTH" ]; then
+     echo "DHIS_GOOGLE_AUTH var is blank or unset not creating google auth.json";
+else
+     echo $DHIS_GOOGLE_AUTH | base64 --decode > dhis-google-auth.json;
 fi
 
 if [ ! -z "$KUBERNETES_SERVICE_HOST" ]; then

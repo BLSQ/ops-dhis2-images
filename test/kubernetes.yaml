@@ -145,7 +145,7 @@ spec:
     spec:
       containers:
         - name: dhis2
-          image: blsq/dhis2:${DHIS2_FULL_VERSION}
+          image: blsq/dhis2:${DHIS2_FULL_VERSION}-std
           imagePullPolicy: IfNotPresent
           env:
             - name: JAVA_OPTS

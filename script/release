@@ -1,6 +1,0 @@
-#!/bin/bash
-
-DHIS2_FULL_VERSION=$1
-
-./script/build $DHIS2_FULL_VERSION
-./script/publish $DHIS2_FULL_VERSION
