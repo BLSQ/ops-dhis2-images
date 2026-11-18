@@ -1,9 +1,157 @@
 #!/bin/bash
+# Build blsq/dhis2 images with the JDK and Tomcat recorded in versions.json.
+# Run ./script/versions.py first to refresh versions.json.
 
-DHIS2_FULL_VERSION=$1
-DHIS2_VERSION=$(echo $DHIS2_FULL_VERSION | cut -d'.' -f 1,2)
-DHIS2_TAG=$(echo $DHIS2_FULL_VERSION | cut -d'-' -f 1  | cut -d'.' -f 1,2,3)
-echo downloading 
-./script/download_release ${DHIS2_VERSION} ${DHIS2_FULL_VERSION}
-echo Starting image build for ${DHIS2_FULL_VERSION} ${DHIS2_VERSION}
-docker build --build-arg DHIS2_FULL_VERSION=$DHIS2_FULL_VERSION --build-arg DHIS2_VERSION=$DHIS2_VERSION  -t blsq/dhis2:$DHIS2_VERSION -t blsq/dhis2:$DHIS2_FULL_VERSION -t blsq/dhis2:$DHIS2_TAG .
+set -euo pipefail
+
+usage() {
+    cat <<EOF
+Usage:
+  ./script/build [options] <version>...   build the given DHIS2 version(s), e.g. 2.42.7.1
+  ./script/build [options] --all          build every version in versions.json
+
+Options:
+  --all           build every version (oldest first)
+  --supported     with --all, only versions DHIS2 still supports
+  --minor X.Y     with --all, only versions of that minor, e.g. 2.41
+  --local         tag for local docker-compose use (no -std suffix)
+  --push          push the tags to Docker Hub after each build
+  --dry-run       print what would be built, without building
+  -h, --help      show this help
+
+Environment:
+  PLATFORM        docker platform to build for (default: linux/amd64)
+EOF
+}
+
+IMAGE=blsq/dhis2
+PLATFORM=${PLATFORM:-linux/amd64}
+VERSIONS_FILE=./versions.json
+
+ALL=false
+SUPPORTED=false
+MINOR=
+LOCAL=false
+PUSH=false
+DRY_RUN=false
+REQUESTED=()
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --all) ALL=true ;;
+        --supported) SUPPORTED=true ;;
+        --minor) MINOR=$2; shift ;;
+        --local) LOCAL=true ;;
+        --push) PUSH=true ;;
+        --dry-run) DRY_RUN=true ;;
+        -h|--help) usage; exit 0 ;;
+        -*) echo "Unknown option: $1" >&2; usage; exit 1 ;;
+        *) REQUESTED+=("$1") ;;
+    esac
+    shift
+done
+
+if [ "$ALL" = false ] && [ ${#REQUESTED[@]} -eq 0 ]; then
+    usage
+    exit 1
+fi
+
+cd "$(dirname "$0")/.."
+
+# Print the versions.json entries to build, one JSON object per line
+select_versions() {
+    if [ "$ALL" = true ]; then
+        jq -c --argjson supported "$SUPPORTED" --arg minor "$MINOR" '
+            map(select(($supported | not) or .supported))
+            | map(select($minor == "" or (.version | startswith($minor + "."))))
+            | sort_by(.version | split(".") | map(tonumber))
+            | .[]' "$VERSIONS_FILE"
+    else
+        for version in "${REQUESTED[@]}"; do
+            entry=$(jq -c --arg v "$version" '.[] | select(.version == $v)' "$VERSIONS_FILE")
+            if [ -z "$entry" ]; then
+                echo "Version $version not found in $VERSIONS_FILE (try ./script/versions.py)" >&2
+                exit 1
+            fi
+            echo "$entry"
+        done
+    fi
+}
+
+build_one() {
+    local entry=$1
+    local full_version url sha256 jdk tomcat webapp_runner
+    full_version=$(jq -r .version <<<"$entry")
+    url=$(jq -r .url <<<"$entry")
+    sha256=$(jq -r '.sha256 // ""' <<<"$entry")
+    jdk=$(jq -r .jdk <<<"$entry")
+    tomcat=$(jq -r .tomcat <<<"$entry")
+    webapp_runner=$(jq -r .webappRunner <<<"$entry")
+
+    # 2.42.7.1 -> 2.42 and 2.42.7
+    local minor_version patch_version suffix
+    minor_version=$(cut -d'.' -f 1,2 <<<"$full_version")
+    patch_version=$(cut -d'.' -f 1,2,3 <<<"$full_version")
+
+    local tags=()
+    if [ "$LOCAL" = true ]; then
+        tags+=("$minor_version" "$full_version")
+        [ "$patch_version" != "$full_version" ] && tags+=("$patch_version")
+    else
+        suffix=std
+        tags+=("$minor_version-$suffix" "$full_version-$suffix")
+        [ "$patch_version" != "$full_version" ] && tags+=("$patch_version-$suffix")
+        tags+=("$patch_version-$suffix-alt")
+    fi
+
+    echo "==> DHIS2 $full_version (JDK $jdk, Tomcat $tomcat / webapp-runner $webapp_runner) -> ${tags[*]/#/$IMAGE:}"
+    [ "$DRY_RUN" = true ] && return 0
+
+    # set -e doesn't apply when called from `if`, hence the explicit returns
+    ./script/download_release "$full_version" "$url" "$sha256" || return 1
+
+    local tag_args=()
+    for tag in "${tags[@]}"; do
+        tag_args+=(-t "$IMAGE:$tag")
+    done
+
+    docker build \
+        --platform "$PLATFORM" \
+        --build-arg DHIS2_FULL_VERSION="$full_version" \
+        --build-arg DHIS2_VERSION="$minor_version" \
+        --build-arg JDK_VERSION="$jdk" \
+        --build-arg WEBAPP_RUNNER_VERSION="$webapp_runner" \
+        "${tag_args[@]}" \
+        . || return 1
+
+    if [ "$PUSH" = true ]; then
+        for tag in "${tags[@]}"; do
+            docker push "$IMAGE:$tag" || return 1
+        done
+    fi
+}
+
+ENTRIES=$(select_versions)
+if [ -z "$ENTRIES" ]; then
+    echo "No versions selected" >&2
+    exit 1
+fi
+
+FAILED=()
+while read -r entry <&3; do
+    version=$(jq -r .version <<<"$entry")
+    if ! build_one "$entry"; then
+        echo "!! Build failed for $version" >&2
+        FAILED+=("$version")
+        [ "$ALL" = false ] && exit 1
+    fi
+    # Wars are ~350MB each; don't keep them all around when building everything
+    if [ "$ALL" = true ] && [ "$DRY_RUN" = false ]; then
+        rm -f "./releases/dhis2-stable-$version.war"
+    fi
+done 3<<<"$ENTRIES"
+
+if [ ${#FAILED[@]} -gt 0 ]; then
+    echo "Failed versions: ${FAILED[*]}" >&2
+    exit 1
+fi

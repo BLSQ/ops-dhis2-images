@@ -1,18 +1,31 @@
 #!/bin/bash
+# Download a DHIS2 war into ./releases and verify its checksum.
+# Usage: ./script/download_release <DHIS2_FULL_VERSION> <URL> [SHA256]
 
-DHIS2_CHANNEL=stable
-DHIS2_VERSION=$1
-DHIS2_FULL_VERSION=$2
+set -euo pipefail
 
-uri=https://releases.dhis2.org/$DHIS2_VERSION/dhis2-$DHIS2_CHANNEL-$DHIS2_FULL_VERSION.war
-file=./releases/dhis2-$DHIS2_CHANNEL-$DHIS2_FULL_VERSION.war 
+DHIS2_FULL_VERSION=$1
+URL=$2
+SHA256=${3:-}
 
-find ./releases -name "*.war" -type 'f' -size -200M -delete
+mkdir -p ./releases
+file=./releases/dhis2-stable-$DHIS2_FULL_VERSION.war
 
-if test -e "$file"
-then zflag="-z $file"
-else zflag=
+verify() {
+    [ -z "$SHA256" ] && return 0
+    echo "$SHA256  $file" | shasum -a 256 -c --status
+}
+
+if [ -f "$file" ] && verify; then
+    echo "Using cached $file"
+    exit 0
 fi
 
-curl -o "$file" $zflag "$uri"
-find ./releases -name "*.war" -type 'f' -size -200M -delete
+echo "Downloading $URL"
+curl -fL --retry 3 -o "$file" "$URL"
+
+if ! verify; then
+    echo "Checksum mismatch for $file" >&2
+    rm -f "$file"
+    exit 1
+fi
